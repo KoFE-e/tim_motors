@@ -1,0 +1,27 @@
+@import 'libs/bootstrap-reboot.min';
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&display=swap');
+
+@import 'base/variables';
+@import 'base/mixins';
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+section {
+    background: #F1F5F9;
+}
+
+@import 'blocks/menu';
+@import 'blocks/promo';
+@import 'blocks/advantages';
+@import 'blocks/steps';

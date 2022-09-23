@@ -1,0 +1,8 @@
+@mixin a_reset {
+    color: #000000;
+    text-decoration: none;
+    &:hover {
+        color: #000000;
+        text-decoration: none;
+    }
+}

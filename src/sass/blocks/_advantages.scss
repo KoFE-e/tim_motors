@@ -1,0 +1,48 @@
+.advantages {
+    padding-top: 188px;
+    min-height: 752px;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__header {
+        font-weight: 800;
+        font-size: 42px;
+        line-height: 165.9%;
+        span {
+            color: $main-color;
+        }
+        margin-bottom: 41px;
+    }
+    &__divider {
+        width: 41px;
+        height: 5px;
+        border-radius: 3px;
+        background-color: $main-color;
+        margin-bottom: 112px;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: 45px minmax(360px, auto); 
+        grid-template-rows: repeat(3, 55px);
+        grid-auto-rows: 55px;
+        row-gap: 70px;
+        column-gap: 60px;
+        align-items: center;
+    }
+    &__icon {
+        display: flex;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+        background: #F1F5F9;
+        box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
+        border-radius: 13px;
+    }
+    &__item {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 165.9%;
+    }
+}
