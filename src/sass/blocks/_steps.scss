@@ -23,8 +23,23 @@
         grid-template-columns: repeat(2, 313px);
         justify-content: center;
         column-gap: 28px;
+        &_3 {
+            grid-template-columns: repeat(3, 313px);
+            .steps__item {
+                &:nth-child(2) {
+                    &:before {
+                        content: url("../icons/steps/up_dash.svg");
+                        display: block;
+                        position: absolute;
+                        right: -100px;
+                        top: 50px;
+                    }
+                }
+            }
+        }
     }
     &__item {
+        position: relative;
         &__img {
             margin: 0 auto;
             display: flex;
@@ -36,20 +51,31 @@
             box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
             border-radius: 24px;
         }
-        &__subheader {
+        &__descr {
             margin-top: 66px;
+        }
+        &__subheader {
             font-weight: 700;
             font-size: 21px;
             line-height: 165.9%;
             text-align: center;
+            margin-bottom: 30px;
         }
         &__text {
-            margin-top: 20px;
             font-weight: 600;
             font-size: 16px;
             line-height: 160.4%;
             text-align: center;
             color: #727272;
+        }
+        &:nth-child(1) {
+            &:before {
+                content: url("../icons/steps/down_dash.svg");
+                display: block;
+                position: absolute;
+                right: -100px;
+                top: 10px;
+            }
         }
     }
 }
