@@ -1,0 +1,38 @@
+.footer {
+    min-height: 376px;
+    padding: 87px 0 160px 0;
+    a {
+        @include a_reset;
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__subheader {
+        font-weight: 800;
+        font-size: 33px;
+        margin-bottom: 26px;
+    }
+    &__contacts {
+        &__tel {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        &__mail {
+            font-weight: 700;
+            font-size: 14px;
+        }
+    }
+    &__social {
+        &__links {
+            a {
+                margin-right: 30px;
+            }
+        }
+    }
+    &__logo {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

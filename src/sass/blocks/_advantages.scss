@@ -46,4 +46,13 @@
         font-size: 18px;
         line-height: 165.9%;
     }
+    &__img {
+        border-radius: 34px;
+        width: 852px;
+        height: 568px;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
 }

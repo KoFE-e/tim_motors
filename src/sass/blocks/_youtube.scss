@@ -1,0 +1,24 @@
+.youtube {
+    background-color: #F1F5F9;
+    &__img {
+        margin: 0 auto;
+        width: 297px;
+        height: 127px;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__subheader {
+        text-align: center;
+        margin-top: 47px;
+        font-weight: 800;
+        font-size: 33px;
+    }
+    &__video {
+        margin-top: 45px;
+        iframe {
+            border-radius: 33px;
+        }
+    }
+}
