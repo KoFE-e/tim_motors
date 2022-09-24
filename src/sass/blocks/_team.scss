@@ -1,0 +1,54 @@
+.team {
+    padding: 115px 0;
+    background-color: #F1F5F9;
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 688px 712px;
+        column-gap: 55px;
+    }
+    &__details {
+        &__subheader {
+            font-weight: 800;
+            font-size: 42px;
+            margin-bottom: 50px;
+            span {
+                color: $main-color;
+            }
+        }
+        &__descr {
+            font-weight: 300;
+            font-size: 23px;
+            line-height: 165.9%;
+            margin-bottom: 40px;
+        }
+    }
+    &__members {
+        &__subheader {
+            font-weight: 800;
+            font-size: 33px;
+        }
+    }
+    &__member {
+        &__name {
+            margin-top: 25px;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 143.9%;
+        }
+        &__descr {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 143.9%;
+            color: #ACACAC;
+        }
+    }
+    &__list {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 328px);
+        grid-template-rows: repeat(2, minmax(347px, auto));
+        grid-auto-rows: minmax(347px, auto);
+        column-gap: 56px;
+        row-gap: 30px;
+    }
+}

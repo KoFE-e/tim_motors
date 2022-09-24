@@ -1,5 +1,6 @@
 .steps {
     padding-top: 93px;
+    background-color: #F1F5F9;
     &__header {
         font-weight: 600;
         font-size: 16px;
@@ -52,14 +53,17 @@
             border-radius: 24px;
         }
         &__descr {
+            min-height: 150px;
             margin-top: 66px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         &__subheader {
             font-weight: 700;
             font-size: 21px;
-            line-height: 165.9%;
+            line-height: 139.4%;
             text-align: center;
-            margin-bottom: 30px;
         }
         &__text {
             font-weight: 600;
@@ -76,6 +80,37 @@
                 right: -100px;
                 top: 10px;
             }
+        }
+    }
+    &__help {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 66px;
+        width: 900px;
+        min-height: 164px;
+        box-shadow: -1px -1px 0px #FFFFFF, -2px -2px 2px #B8CCE0, inset -1px -1px 0px #FFFFFF, inset -2px -2px 2px #B8CCE0;
+        border-radius: 32px;
+        &__info {
+            width: 808px;
+            min-height: 102px;
+            box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
+            border-radius: 24px;
+            padding: 19px 0;
+        }
+        &__subheader {
+            font-weight: 700;
+            font-size: 21px;
+            text-align: center;
+        }
+        &__text {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 160.4%;
+            text-align: center;
+            color: #727272;
+            margin-top: 5px;
         }
     }
 }
