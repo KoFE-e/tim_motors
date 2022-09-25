@@ -81,6 +81,10 @@
             height: 50px;
             border-radius: 100%;
             box-shadow: 4.9px 4.9px 9.8px #C9D9E8, -4.9px -4.9px 9.8px #FFFFFF;
+            transition: 0.3s all;
+            svg {
+                transition: 0.3s all;
+            }
             a {
                 @include a_reset;
             }
@@ -90,7 +94,6 @@
                     path{
                         fill: #FFFFFF;
                     }
-                    
                 }
             }
         }
