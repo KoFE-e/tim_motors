@@ -12,10 +12,11 @@
     &__item {
         padding: 24px 0 24px 34px;
         width: 1450px;
-        min-height: 125px;
+        max-height: 125px;
         box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
         border-radius: 24px;
         margin-bottom: 24px;
+        transition: 0.3s max-height;
     }
     &__title {
         display: flex;
@@ -56,8 +57,8 @@
         .vertical {
             transform: rotate(90deg);
         }
-        &_expanded {
-            transition: 0.3s all;
+        .horizontal {
+            transition: 0.5s all;
         }
     }
 }

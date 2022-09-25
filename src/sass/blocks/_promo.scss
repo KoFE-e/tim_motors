@@ -95,6 +95,7 @@
         z-index: 2;
         max-height: 215px;
         overflow: hidden auto;
+        transition: 0.3s all;
         &::-webkit-scrollbar {
             width: 10px;
             border-radius: 20px;
@@ -111,8 +112,4 @@
         font-size: 21px;
         line-height: 150%;
     }
-}
-
-.active {
-    display: block;
 }

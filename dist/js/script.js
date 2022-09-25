@@ -27,19 +27,24 @@ dropdowns.forEach(dropdown => {
     const selected = dropdown.querySelector('.selected');
 
     select.addEventListener('click', () => {
-        menu.classList.add('active');
+        if (menu.style.display == "none") {
+            fadeIn(menu, 300);
+        }
+        else {
+            fadeOut(menu, 300);
+        };
     });
 
     document.addEventListener('click', event => {
         if (event.target != select) {
-            menu.classList.remove('active');
+            fadeOut(menu, 300);
         };
     });
 
     options.forEach(option => {
         option.addEventListener('click', () => {
             selected.innerHTML = option.innerHTML;
-            menu.classList.remove('active');
+            fadeOut(menu, 300);
         });
     });
 });
@@ -48,7 +53,6 @@ const questions = document.querySelectorAll('.questions__item');
 
 questions.forEach(question => {
     const answer = question.querySelector('.questions__answer');
-    const icon = question.querySelector('.questions__icon');
     const vertical = question.querySelector('.vertical');
     const horizontal = question.querySelector('.horizontal');
     const title = question.querySelector('.questions__title');
@@ -56,12 +60,15 @@ questions.forEach(question => {
     title.addEventListener('click', () => {
         if (!answer.classList.contains('expanded')) {
             answer.classList.add('expanded');
-            icon.classList.add('questions__icon_expanded');
             fadeOut(vertical, 500);
+            horizontal.style.transform = "rotate(180deg)";
+            question.style.maxHeight = "500px";
         }
         else {
             answer.classList.remove('expanded');
             fadeIn(vertical, 500);
+            horizontal.style.transform = "rotate(-180deg)";
+            question.style.maxHeight = "125px";
         };
     });
 });
