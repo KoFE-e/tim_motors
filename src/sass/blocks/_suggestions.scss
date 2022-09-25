@@ -18,29 +18,29 @@
         justify-content: space-around;
     }
     &__card {
-        width: 665px;
-        height: 380px;
+        width: 584px;
+        height: 332px;
         border-radius: 13px;
         padding: 32px 0 52px 32px;
         position: relative;
         &__subheader {
             font-weight: 600;
-            font-size: 43px;
+            font-size: 42px;
             color: #FFFFFF;
         }
         &__descr {
             font-weight: 500;
-            font-size: 22px;
+            font-size: 21px;
             line-height: 160%;
             color: #FFFFFF;
-            margin-top: 22px;
+            margin-top: 18px;
         }
         &__btn {
             z-index: 2;
-            margin-top: 94px;
-            width: 250px;
-            height: 60px;
-            padding: 15px 21px;
+            margin-top: 70px;
+            width: 239px;
+            height: 52px;
+            padding: 10px;
             background: #3563E9;
             border-radius: 5.33333px;
             font-weight: 600;
@@ -53,6 +53,7 @@
             }
         }
         &__img {
+            transform: scale(0.9);
             position: absolute;
             bottom: -17%;
             left: 37%;

@@ -1,5 +1,5 @@
 .advantages {
-    padding-top: 188px;
+    padding-top: 172px;
     min-height: 752px;
     background-color: #F1F5F9;
     &__wrapper {
@@ -24,10 +24,10 @@
     }
     &__list {
         display: grid;
-        grid-template-columns: 45px minmax(360px, auto); 
-        grid-template-rows: repeat(3, 55px);
+        grid-template-columns: 45px 350px; 
+        grid-template-rows: repeat(3, minmax(55px, auto));
         grid-auto-rows: 55px;
-        row-gap: 70px;
+        row-gap: 60px;
         column-gap: 60px;
         align-items: center;
     }
@@ -47,12 +47,10 @@
         line-height: 165.9%;
     }
     &__img {
-        border-radius: 34px;
-        width: 852px;
-        height: 568px;
         img {
-            display: block;
-            width: 100%;
+            border-radius: 34px;
+            width: 675px;
+            height: 529px;
             object-fit: cover;
         }
     }
