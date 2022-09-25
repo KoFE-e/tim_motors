@@ -39,6 +39,7 @@
         width: 1450px;
         height: 130px;
         position: absolute;
+        z-index: 1;
         left: 50%;
         transform: translateX(-50%);
         bottom: -50px;
@@ -49,14 +50,16 @@
         justify-content: space-between;
         padding: 12px 12px 12px 192px;
         align-items: center;
-        &__item {
-            cursor: pointer;
+        &__dropdown {
+            position: relative;
+            z-index: 0;
         }
-        &__descr {
+        &__category {
             font-weight: 700;
             font-size: 21px;
             line-height: 165.9%;
             position: relative;
+            cursor: pointer;
             &:before {
                 content: url("../icons/promo/arrow-down.svg");
                 display: block;
@@ -78,4 +81,38 @@
             line-height: 165.9%;
         }
     }
+}
+
+.dropdown {
+    &__list {
+        display: none;
+        position: absolute;
+        left: -10px;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        padding: 20px;
+        z-index: 2;
+        max-height: 215px;
+        overflow: hidden auto;
+        &::-webkit-scrollbar {
+            width: 10px;
+            border-radius: 20px;
+        }   
+        &::-webkit-scrollbar-thumb {
+            background: $main-color;
+            border-radius: 20px;
+        }
+    }
+    &__item {
+        cursor: pointer;
+        text-align: left;
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 150%;
+    }
+}
+
+.active {
+    display: block;
 }
