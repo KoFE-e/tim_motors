@@ -19,6 +19,10 @@
             font-size: 16px;
             line-height: 165.9%;
             @include a_reset;
+            transition: 0.3s all;
+            &:hover {
+                color: $main-color;
+            }
         }
     }
     &__contacts {
@@ -35,14 +39,31 @@
             background: #FFFFFF;
             box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
             border-radius: 40px;
-            img {
+            transition: 0.3s all;
+            svg {
                 margin-right: 22px;
+                transition: 0.3s all;
             }
             a {
                 font-weight: 700;
                 font-size: 14px;
                 line-height: 16px;
                 @include a_reset;
+            }
+            &:hover {
+                background-color: $main-color;
+                a {
+                    color: #FFFFFF;
+                }
+                svg {
+                    path {
+                        fill: #FFFFFF;
+                    }
+                    .mail_icon {
+                        fill: $main-color;
+                        stroke: #FFFFFF;
+                    }
+                }
             }
         }
     }
@@ -62,6 +83,15 @@
             box-shadow: 4.9px 4.9px 9.8px #C9D9E8, -4.9px -4.9px 9.8px #FFFFFF;
             a {
                 @include a_reset;
+            }
+            &:hover {
+                background-color: $main-color;
+                svg {
+                    path{
+                        fill: #FFFFFF;
+                    }
+                    
+                }
             }
         }
     }
