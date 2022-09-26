@@ -22,14 +22,17 @@
         background-color: $main-color;
         margin-bottom: 112px;
     }
-    &__list {
+    &__item {
         display: grid;
         grid-template-columns: 45px 350px; 
-        grid-template-rows: repeat(3, minmax(55px, auto));
-        grid-auto-rows: 55px;
-        row-gap: 60px;
+        grid-template-rows: minmax(55px, auto);
         column-gap: 60px;
         align-items: center;
+        margin-bottom: 62px;
+        transition: 0.3s all;
+        &:hover {
+            transform: scale(1.1);
+        }
     }
     &__icon {
         display: flex;
@@ -41,7 +44,8 @@
         box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
         border-radius: 13px;
     }
-    &__item {
+    &__descr {
+        cursor: default;
         font-weight: 700;
         font-size: 18px;
         line-height: 165.9%;

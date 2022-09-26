@@ -16,7 +16,15 @@
         box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
         border-radius: 24px;
         margin-bottom: 24px;
-        transition: 0.3s max-height;
+        transition: 0.5s all;
+        &:hover {
+            .questions__name {
+                color: $main-color;
+            }
+            span {
+                background-color: $main-color;
+            }
+        }
     }
     &__title {
         display: flex;
@@ -28,6 +36,7 @@
         font-weight: 500;
         font-size: 33px;
         cursor: pointer;
+        transition: 0.3s all;
     }
     &__answer {
         margin-top: 40px;
@@ -53,6 +62,7 @@
             border-radius: 50px;
             background-color: #000000;
             position: absolute;
+            transition: 0.3s all;
         }
         .vertical {
             transform: rotate(90deg);
@@ -61,8 +71,4 @@
             transition: 0.5s all;
         }
     }
-}
-
-.expanded {
-    display: block;
 }

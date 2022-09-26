@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav>
-            <div class="menu">
+            <div class="menu" id="up">
                 <a href="#" class="menu__logo">
                     <img src="icons/menu/logo.svg" alt="logo">
                 </a>
@@ -94,7 +94,7 @@
     <section class="promo">
         <div class="language">
             <div class="language__choice">EN</div>
-            <div class="language__choice language__selected">RU</div>
+            <div class="language__choice language__selected_ru">RU</div>
         </div>
         <div class="container">
             <h1 class="promo__header">
@@ -184,6 +184,10 @@
             <div class="promo__search__item">
                 <div class="promo__search__dropdown">
                     <div class="promo__search__category selected">Год</div>
+                    <div class="dropdown__list">
+                        <div class="dropdown__item">2021</div>
+                        <div class="dropdown__item">2022</div>
+                    </div>
                 </div>
             </div>
             <div class="promo__search__btn">
@@ -199,18 +203,24 @@
                     <div class="advantages__header">Наши <span>преимущества</span></div>
                     <div class="advantages__divider"></div>
                     <div class="advantages__list">
-                        <div class="advantages__icon">
-                            <img src="icons/advantages/star_icon.svg" alt="star">
+                        <div class="advantages__item">
+                            <div class="advantages__icon">
+                                <img src="icons/advantages/star_icon.svg" alt="star">
+                            </div>
+                            <div class="advantages__descr">Дистрибьюторы крупных<br>производителей</div>
                         </div>
-                        <div class="advantages__item">Дистрибьюторы крупных<br>производителей</div>
-                        <div class="advantages__icon">
-                            <img src="icons/advantages/pos_icon.svg" alt="pos">
+                        <div class="advantages__item">
+                            <div class="advantages__icon">
+                                <img src="icons/advantages/pos_icon.svg" alt="pos">
+                            </div>
+                            <div class="advantages__descr">Имеем свою собственную площадку<br>по ремонту и продаже машину в Дубае </div>
                         </div>
-                        <div class="advantages__item">Имеем свою собственную площадку<br>по ремонту и продаже машину в Дубае </div>
-                        <div class="advantages__icon">
-                            <img src="icons/advantages/list_icon.svg" alt="list">
+                        <div class="advantages__item">
+                            <div class="advantages__icon">
+                                <img src="icons/advantages/list_icon.svg" alt="list">
+                            </div>
+                            <div class="advantages__descr">Контролируем процесс доставки<br>от загрузки до выгрузки </div>
                         </div>
-                        <div class="advantages__item">Контролируем процесс доставки<br>от загрузки до выгрузки </div>
                     </div>
                 </div>
                 <div class="advantages__img">
@@ -475,7 +485,7 @@
                     </div>
                     <div class="footer__social__links">
                         <a href="#"><img src="icons/footer/youtube_icon.svg" alt="youtube"></a>
-                        <a href="#"><img src="icons/footer/instagram_icon.svg" alt="youtube"></a>
+                        <a href="#"><img src="icons/footer/instagram_icon.svg" alt="instagram"></a>
                     </div>
                 </div>
                 <div class="footer__logo">
@@ -487,6 +497,12 @@
         </div>
     </footer>
 
+    <a href="#up" class="pageup">
+        <img src="icons/circle-chevron-up-solid.svg" alt="pageup">
+    </a>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

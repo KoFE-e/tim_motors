@@ -23,6 +23,10 @@
         border-radius: 13px;
         padding: 32px 0 52px 32px;
         position: relative;
+        transition: 0.3s all;
+        &:hover {
+            transform: scale(1.05);
+        }
         &__subheader {
             font-weight: 600;
             font-size: 42px;
@@ -48,6 +52,7 @@
             color: #FFFFFF;
             text-align: center;
             cursor: pointer;
+            @include btn_animation;
             &_bu {
                 background-color: #5CAFFC;
             }

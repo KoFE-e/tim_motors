@@ -1,3 +1,5 @@
+//animations
+
 const fadeIn = (el, timeout, display) => {
     el.style.opacity = 0;
     el.style.display = display || 'block';
@@ -17,6 +19,7 @@ const fadeOut = (el, timeout) => {
     }, timeout);
 };
 
+//dropdown_menu
 
 const dropdowns = document.querySelectorAll('.promo__search__dropdown');
 
@@ -49,6 +52,8 @@ dropdowns.forEach(dropdown => {
     });
 });
 
+//questions_expand
+
 const questions = document.querySelectorAll('.questions__item');
 
 questions.forEach(question => {
@@ -60,15 +65,35 @@ questions.forEach(question => {
     title.addEventListener('click', () => {
         if (!answer.classList.contains('expanded')) {
             answer.classList.add('expanded');
+            fadeIn(answer, 500);
             fadeOut(vertical, 500);
             horizontal.style.transform = "rotate(180deg)";
             question.style.maxHeight = "500px";
         }
         else {
             answer.classList.remove('expanded');
+            fadeOut(answer, 500);
             fadeIn(vertical, 500);
             horizontal.style.transform = "rotate(-180deg)";
             question.style.maxHeight = "125px";
         };
+    });
+});
+
+//jquery scripts
+$(document).ready(function(){
+    // scroll_icon
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 800) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
+    });
+
+    $("a[href^='#up']").click(function() {
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
     });
 });

@@ -34,9 +34,10 @@
         background: #FFFFFF;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 16px;
-        display: flex;
+        display: grid;
+        grid-template-columns: 180px 90px 50px 273px;
         justify-content: space-between;
-        padding: 12px 12px 12px 192px;
+        padding: 12px 12px 12px 102px;
         align-items: center;
         &__dropdown {
             position: relative;
@@ -47,6 +48,7 @@
             font-size: 21px;
             line-height: 165.9%;
             position: relative;
+            max-width: 164px;
             cursor: pointer;
             &:before {
                 content: url("../icons/promo/arrow-down.svg");
@@ -67,6 +69,7 @@
             color: #fff;
             cursor: pointer;
             line-height: 165.9%;
+            @include btn_animation;
         }
     }
 }
@@ -123,10 +126,20 @@
         align-items: center;
         width: 52px;
         height: 35px;
+        border-radius: 40px;
+        transition: 0.3s all;
+        &:hover {
+            color: #1476FF;
+        }
     }
     &__selected {
-        background: linear-gradient(270deg, #C9D9E8 -2.46%, rgba(201, 217, 232, 0) 74.59%);
-        border-radius: 40px;
-        color: #1476FF;
+        &_ru {
+            background: linear-gradient(270deg, #C9D9E8 -2.46%, rgba(201, 217, 232, 0) 74.59%);
+            color: #1476FF;
+        }
+        &_en {
+            background: linear-gradient(-270deg, #C9D9E8 -2.46%, rgba(201, 217, 232, 0) 74.59%);
+            color: #1476FF;
+        }
     }
 }

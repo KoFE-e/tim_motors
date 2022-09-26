@@ -6,3 +6,11 @@
         text-decoration: none;
     }
 }
+
+@mixin btn_animation {
+    transition: 0.3s all;
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+}

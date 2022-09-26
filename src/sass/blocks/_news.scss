@@ -34,5 +34,6 @@
         padding: 16px 55px;
         text-align: center;
         cursor: pointer;
+        @include btn_animation;
     }
 }
