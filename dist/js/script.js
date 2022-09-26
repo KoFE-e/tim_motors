@@ -96,4 +96,18 @@ $(document).ready(function(){
         $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
         return false;
     });
+    
+    //slider
+
+    $('.news__inner').slick({
+        speed: 1200,
+        adaptiveHeight: true,
+        arrows: true,
+        autoplay: false,
+        swipe: false,
+        autoplaySpeed: 5000,
+        slidesToShow: 1,
+        prevArrow: '<button type="button" class="slick-prev"><img src="icons/slider/left.png"></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="icons/slider/right.png"></button>',
+    });
 });
