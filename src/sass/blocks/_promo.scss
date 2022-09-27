@@ -1,9 +1,11 @@
 .promo {
-    min-height: 830px;
+    min-height: 100vh;
     background: url("../img/promo/promo_bg.jpg") center (center/cover) no-repeat;
     background-color: rgba(0, 0, 0, 0.4);
     position: relative;
-    padding-top: 245px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     &__logo {
         margin-bottom: 30px;
@@ -60,13 +62,15 @@
             }
         }
         &__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 273px;
             height: 106px;
             background: #3563E9;
             border-radius: 21px;
             font-weight: 700;
             font-size: 21px;
-            padding: 35px 85px;
             color: #fff;
             cursor: pointer;
             line-height: 165.9%;

@@ -21,7 +21,7 @@ const fadeOut = (el, timeout) => {
 
 //dropdown_menu
 
-const dropdowns = document.querySelectorAll('.promo__search__dropdown');
+const dropdowns = document.querySelectorAll('.promo__search__item');
 
 dropdowns.forEach(dropdown => {
     const select = dropdown.querySelector('.promo__search__category');
@@ -30,7 +30,7 @@ dropdowns.forEach(dropdown => {
     const selected = dropdown.querySelector('.selected');
 
     select.addEventListener('click', () => {
-        if (menu.style.display == "none") {
+        if (getComputedStyle(menu).display == "none") {
             fadeIn(menu, 300);
         }
         else {
@@ -92,6 +92,12 @@ $(document).ready(function(){
     });
 
     $("a[href^='#up']").click(function() {
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
+    });
+
+    $("a[href^='#']").click(function() {
         const _href = $(this).attr("href");
         $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
         return false;

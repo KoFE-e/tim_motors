@@ -3,12 +3,14 @@
     display: flex;
     justify-content: space-between;
     padding: 0 110px;
+    max-width: 1920px;
+    margin: 0 auto;
     &__logo {
         margin-top: 44px;
     }
     &__list {
         margin-top: 47px;
-        width: 350px;
+        width: 450px;
         display: flex;
         justify-content: space-between;
         &__item {
@@ -28,7 +30,7 @@
     &__contacts {
         display: flex;
         justify-content: space-between;
-        width: 490px;
+        width: 520px;
         padding-top: 37px;
         &__item {
             display: flex;
@@ -66,7 +68,7 @@
     &__social {
         display: flex;
         height: 50px;
-        width: 130px;
+        width: 150px;
         justify-content: space-between;
         padding-top: 37px;
         &__item {

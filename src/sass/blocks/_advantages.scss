@@ -2,9 +2,15 @@
     padding-top: 172px;
     min-height: 752px;
     background-color: #F1F5F9;
+    position: relative;
+    .link {
+        position: absolute;
+        top: 100px;
+    }
     &__wrapper {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        column-gap: 50px;
     }
     &__header {
         font-weight: 800;
@@ -28,7 +34,7 @@
         grid-template-rows: minmax(55px, auto);
         column-gap: 60px;
         align-items: center;
-        margin-bottom: 62px;
+        margin-top: 62px;
         transition: 0.3s all;
         &:hover {
             transform: scale(1.1);
@@ -51,10 +57,11 @@
         line-height: 165.9%;
     }
     &__img {
+        height: 530px;
         img {
             border-radius: 34px;
-            width: 675px;
-            height: 529px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
     }
