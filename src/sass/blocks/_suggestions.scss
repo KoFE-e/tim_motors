@@ -1,7 +1,7 @@
 .suggestions {
     min-height: 784px;
     padding-top: 95px;
-    background: url("../img/auto/auto_bg.png") center no-repeat;
+    background: url("../img/auto/auto_bg.png") center center/cover no-repeat;
     background-color: #F1F5F9;
     &__subheader {
         text-align: center;

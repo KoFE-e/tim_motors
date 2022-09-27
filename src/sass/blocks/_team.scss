@@ -54,15 +54,14 @@
         }
     }
     &__list {
-        margin: 0 auto;
-        margin-top: 40px;
+        margin: 40px 0 30px 0;
         display: grid;
         grid-template-columns: repeat(4, 279px);
         grid-template-rows: minmax(333px, auto);
         grid-auto-rows: minmax(333px, auto);
         column-gap: 21px;
         row-gap: 30px;
-        margin-bottom: 30px;
+        justify-content: center;
     }
     &__address {
         display: flex;

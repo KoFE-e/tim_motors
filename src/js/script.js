@@ -61,6 +61,8 @@ questions.forEach(question => {
     const vertical = question.querySelector('.vertical');
     const horizontal = question.querySelector('.horizontal');
     const title = question.querySelector('.questions__title');
+    const questionMaxHeight = getComputedStyle(question).maxHeight;
+    console.log(questionMaxHeight);
 
     title.addEventListener('click', () => {
         if (!answer.classList.contains('expanded')) {
@@ -75,7 +77,7 @@ questions.forEach(question => {
             fadeOut(answer, 500);
             fadeIn(vertical, 500);
             horizontal.style.transform = "rotate(-180deg)";
-            question.style.maxHeight = "125px";
+            question.style.maxHeight = questionMaxHeight;
         };
     });
 });
@@ -109,7 +111,7 @@ $(document).ready(function(){
         speed: 1200,
         adaptiveHeight: true,
         arrows: true,
-        autoplay: false,
+        autoplay: true,
         swipe: false,
         autoplaySpeed: 5000,
         slidesToShow: 1,

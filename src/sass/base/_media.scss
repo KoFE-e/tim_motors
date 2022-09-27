@@ -39,27 +39,12 @@
             width: 130px;
         }
     }
-}
-
-@media (max-width: 1199.98px) {
-    .container {
-        max-width: 960px;
-    }
-    .menu {
-        &__list {
-            width: 290px;
-        }
-    }
     .language {
         left: 55px;
     }
-    .pageup {
-        right: 25px;
-        bottom: 25px;
-    }
     .promo {
         &__search {
-            width: 850px;
+            width: 1000px;
             height: 100px;
             padding-left: 50px;
             &__category {
@@ -74,7 +59,7 @@
     }
     .advantages {
         min-height: auto;
-        padding: 100px 50px 0 50px;
+        padding: 100px 90px 0 90px;
         &__header {
             font-size: 32px;
         }
@@ -92,5 +77,164 @@
         &__img {
             height: 100%;
         }
+    }
+    .steps {
+        &__subheader {
+            font-size: 36px;
+        }
+        &__item {
+            &__descr {
+                margin-top: 40px;
+            }
+        }
+    }
+    .suggestions {
+        padding: 95px 0;
+        min-height: auto;
+        &__subheader {
+            font-size: 36px;
+        }
+        &__card {
+            width: 530px;
+            height: 300px;
+            &__subheader {
+                font-size: 36px;
+            }
+            &__descr {
+                font-size: 20px;
+            }
+            &__btn {
+                margin-top: 50px;
+                font-size: 20px;
+            }
+            &__img {
+                transform: scale(0.75);
+            }
+        }
+    }
+    .team {
+        &__details {
+            &__subheader {
+                font-size: 36px;
+            }
+            &__descr {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1000px;
+                font-size: 18px;
+            }
+        }
+        &__list {
+            grid-template-columns: repeat(4,250px);
+        }
+        &__member {
+            &__name {
+                font-size: 20px;
+            }
+            &__descr {
+                font-size: 20px;
+            }
+        }
+    }
+    .news {
+        padding: 60px 0 110px 0;
+        &__inner {
+            max-width: 500px;
+        }
+        &__subheader {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+        &__header {
+            font-size: 25px;
+        }
+        &__text {
+            font-size: 20px;
+            margin-bottom: 60px;
+        }
+        &__btn {
+            width: 250px;
+            font-size: 20px;
+        }
+        .slick-prev, .slick-next {
+            transform: scale(0.5);
+        }
+        .slick-prev {
+            left: -60px;
+        }
+        .slick-next {
+            right: -60px;
+        }
+    }
+    .youtube {
+        &__img {
+            transform: scale(0.8);
+        }
+        &__subheader {
+            font-size: 25px;
+            margin-top: 30px;
+        }
+        iframe {
+            height: 500px;
+        }
+    }
+    .questions {
+        padding: 80px 0 100px 0;
+        &__subheader {
+            font-size: 36px;
+        }
+        &__list {
+            margin-top: 50px;
+        }
+        &__item {
+            padding: 20px 34px;
+            width: 1000px;
+            max-height: 100px;
+        }
+        &__name {
+            font-size: 26px;
+            margin-left: 40px;
+        }
+        &__icon {
+            width: 60px;
+            height: 60px;
+            span {
+                width: 30px;
+            }
+        }
+        &__answer {
+            font-size: 18px;
+        }
+    }
+    .footer {
+        min-height: auto;
+        padding: 100px 60px;
+        &__subheader {
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .container {
+        max-width: 960px;
+    }
+    .menu {
+        &__list {
+            width: 290px;
+        }
+    }
+    .pageup {
+        right: 25px;
+        bottom: 25px;
+    }
+    .promo {
+        &__search {
+            width: 850px;
+        }
+    }
+    .advantages {
+        padding: 100px 90px 0 90px;
     }
 }
