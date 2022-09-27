@@ -31,16 +31,14 @@
         }
     }
     &__social {
-        &__links {
-            a {
-                margin-right: 30px;
+        &__link {
+            margin-right: 30px;
+            img {
+                transition: 0.3s all;
+            }
+            &:hover {
                 img {
-                    transition: 0.3s all;
-                }
-                &:hover {
-                    img {
-                        transform: scale(1.1);
-                    }
+                    transform: scale(1.1);
                 }
             }
         }
@@ -50,8 +48,11 @@
         transform: scale(0.7);
         &__img {
             position: absolute;
-            top: -25px;
+            top: -30px;
             left: 94px;
+            img {
+                width: 100%;
+            }
         }
     }
 }
