@@ -535,3 +535,142 @@
         }
     }
 }
+
+@media (max-width: 767.98px) {
+    .menu {
+        padding: 0 20px;
+        &__list {
+            width: 250px;
+            &__link {
+                font-size: 14px;
+            }
+        }
+        &__contacts {
+            padding-top: 33px;
+            width: 120px;
+            flex-direction: row;
+            &__item {
+                display: flex;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                padding: 0;
+                svg {
+                    margin-right: 0px;
+                }
+            }
+        }
+        &__tel, &__mail {
+            display: none;
+        }
+        &__logo {
+            margin-top: 40px;
+            transform: scale(0.8);
+        }
+    }
+    .language {
+        left: 30px;
+        top: 30px;
+    }
+    .promo {
+        &__logo {
+            transform: scale(0.7);
+        }
+        &__subheader {
+            font-size: 20px;
+        }
+        &__search {
+            bottom: -100px;
+            width: 300px;
+            height: 220px;
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, 20px) 60px;
+            row-gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+    }
+    .dropdown {
+        &__list {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .advantages {
+        padding-top: 150px;
+        &__subheader {
+            font-size: 25px;
+        }
+    }
+    .steps {
+        &__subheader {
+            font-size: 25px;
+        }
+        &__help {
+            width: 500px;
+            &__info {
+                width: 450px;
+            }   
+        }
+    }
+    .suggestions {
+        &__subheader {
+            font-size: 25px;
+        }
+        &__wrapper {
+            flex-direction: column;
+            align-items: center;
+            min-height: 650px;
+        }
+    }
+    .team {
+        padding-top: 50px;
+        &__details {
+            &__subheader {
+                font-size: 25px;
+            }
+            &__descr {
+                max-width: 500px;
+            }
+        }
+        &__members {
+            &__subheader {
+                font-size: 20px;
+            }
+        }
+        &__address {
+            width: 500px;
+            &__subheader {
+                font-size: 18px;
+            }
+            &__wrapper {
+                width: 450px;
+            }
+        }
+    }
+    .news {
+        background-position: right top 40%;
+        &__inner {
+            width: 300px;
+        }
+        &__wrapper {
+            padding-left: 70px;
+        }
+    }
+    .questions {
+        padding: 80px 0;
+        &__subheader {
+            font-size: 25px;
+        }
+        &__name {
+            font-size: 22px;
+        }
+        &__item {
+            width: 500px;
+        }
+        &__answer {
+            font-size: 16px;
+        }
+    }
+}

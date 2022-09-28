@@ -44,7 +44,6 @@
         align-items: center;
         &__dropdown {
             position: relative;
-            z-index: 0;
         }
         &__category {
             font-weight: 700;
@@ -53,12 +52,16 @@
             position: relative;
             max-width: 164px;
             cursor: pointer;
+            transition: 0.3s all;
             &:before {
                 content: url("../icons/promo/arrow-down.svg");
                 display: block;
                 position: absolute;
                 right: -30px;
                 top: 3px;
+            }
+            &:hover {
+                color: $main-color;
             }
         }
         &__btn {
@@ -72,6 +75,7 @@
             font-weight: 700;
             font-size: 21px;
             color: #fff;
+            position: relative;
             cursor: pointer;
             line-height: 165.9%;
             @include btn_animation;
@@ -107,6 +111,10 @@
         font-weight: 700;
         font-size: 21px;
         line-height: 150%;
+        transition: 0.3s all;
+        &:hover {
+            color: $main-color;
+        }
     }
 }
 
