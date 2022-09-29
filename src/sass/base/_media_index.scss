@@ -531,6 +531,9 @@
             width: 250px;
             &__link {
                 font-size: 14px;
+                &:hover {
+                    color: #000;
+                }
             }
         }
         &__contacts {
@@ -547,6 +550,18 @@
                 svg {
                     margin-right: 0px;
                 }
+                &:hover {
+                    background-color: #fff;
+                    svg {
+                        path {
+                            fill: $main-color;
+                        }
+                        .mail_icon {
+                            fill: #FFFFFF;
+                            stroke: $main-color;
+                        }
+                    }
+                }
             }
         }
         &__tel, &__mail {
@@ -560,6 +575,11 @@
     .language {
         left: 30px;
         top: 30px;
+        &_notselected {
+            &:hover {
+                color: #000;
+            }
+        }
     }
     .promo {
         &__logo {
@@ -577,12 +597,25 @@
             row-gap: 20px;
             justify-content: center;
             padding: 20px;
+            &__category {
+                &:hover {
+                    color: #000;
+                }
+            }
+            &__btn {
+                @include btn_animation_off;
+            }
         }
     }
     .dropdown {
         &__list {
             left: 50%;
             transform: translateX(-50%);
+        }
+        &__item {
+            &:hover {
+                color: #000;
+            }
         }
     }
     .title {
@@ -592,6 +625,11 @@
     }
     .advantages {
         padding-top: 150px;
+        &__item {
+            &:hover {
+                transform: scale(1);
+            }
+        }
     }
     .steps {
         &__help {
@@ -607,12 +645,25 @@
             align-items: center;
             min-height: 650px;
         }
+        &__card {
+            &:hover {
+                transform: scale(1);
+            }
+            &__btn {
+                @include btn_animation_off;
+            }
+        }
     }
     .team {
         padding-top: 50px;
         &__details {
             &__descr {
                 max-width: 500px;
+            }
+        }
+        &__member {
+            &:hover {
+                transform: scale(1);
             }
         }
         &__members {
@@ -628,6 +679,11 @@
             &__wrapper {
                 width: 450px;
             }
+            &__link {
+                &:hover {
+                    color: #727272;
+                }
+            }
         }
     }
     .news {
@@ -638,6 +694,9 @@
         &__wrapper {
             padding-left: 70px;
         }
+        &__btn {
+            @include btn_animation_off;
+        }
     }
     .questions {
         padding: 80px 0;
@@ -646,9 +705,41 @@
         }
         &__item {
             width: 500px;
+            &:hover {
+                .questions__name {
+                    color: #000;
+                }
+                span {
+                    background-color: #000;
+                }
+            }
         }
         &__answer {
             font-size: 16px;
+        }
+    }
+    .footer {
+        padding: 70px 30px;
+        &__subheader {
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+        &__social {
+            &__link {
+                img {
+                    transform: scale(0.8);
+                    &:hover {
+                        transform: scale(0.8);
+                    }
+                }
+            }
+        }
+        &__contacts {
+            a {
+                &:hover {
+                    color: #000;
+                }
+            }
         }
     }
 }

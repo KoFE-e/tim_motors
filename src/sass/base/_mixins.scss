@@ -14,3 +14,10 @@
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
     }
 }
+
+@mixin btn_animation_off {
+    &:hover {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
