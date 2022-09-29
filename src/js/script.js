@@ -117,5 +117,13 @@ $(document).ready(function(){
         slidesToShow: 1,
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/slider/left.png"></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icons/slider/right.png"></button>',
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                swipe: true,
+                arrows: false,
+                dots: true
+            }
+        }]
     });
 });
