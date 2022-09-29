@@ -1,9 +1,9 @@
 @import 'libs/bootstrap-reboot.min';
 @import 'libs/slick';
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;500;600;700;800&display=swap');
 
 @import 'base/variables';
 @import 'base/mixins';
+@import 'base/fonts';
 
 * {
     font-family: 'Nunito Sans', sans-serif;
