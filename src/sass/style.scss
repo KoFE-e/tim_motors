@@ -20,17 +20,23 @@
 
 
 @import 'blocks/menu';
-@import 'blocks/promo';
-@import 'blocks/advantages';
-@import 'blocks/steps';
-@import 'blocks/suggestions';
-@import 'blocks/team';
-@import 'blocks/jumbo';
-@import 'blocks/news';
-@import 'blocks/youtube';
-@import 'blocks/questions';
 @import 'blocks/footer';
 @import 'blocks/pageup';
+@import 'blocks/titles';
 
 
-@import 'base/media';
+
+@import 'blocks/index/promo';
+@import 'blocks/index/advantages';
+@import 'blocks/index/steps';
+@import 'blocks/index/suggestions';
+@import 'blocks/index/team';
+@import 'blocks/index/jumbo';
+@import 'blocks/index/news';
+@import 'blocks/index/youtube';
+@import 'blocks/index/questions';
+
+
+
+
+@import 'base/media_index';

@@ -3,15 +3,6 @@
     padding-top: 95px;
     background: url("../img/auto/auto_bg.png") center center/cover no-repeat;
     background-color: #F1F5F9;
-    &__subheader {
-        text-align: center;
-        font-weight: 800;
-        font-size: 42px;
-        line-height: 155.9%;
-        span {
-            color: $main-color;
-        }
-    }
     &__wrapper {
         margin-top: 43px;
         display: flex;
@@ -40,6 +31,7 @@
             margin-top: 18px;
         }
         &__btn {
+            display: block;
             z-index: 2;
             margin-top: 70px;
             width: 239px;
@@ -53,8 +45,13 @@
             text-align: center;
             cursor: pointer;
             @include btn_animation;
+            text-decoration: none;
             &_bu {
                 background-color: #5CAFFC;
+            }
+            &:hover {
+                color: #FFFFFF;
+                text-decoration: none;
             }
         }
         &__img {

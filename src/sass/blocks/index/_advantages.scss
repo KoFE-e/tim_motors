@@ -13,12 +13,7 @@
         column-gap: 50px;
     }
     &__header {
-        font-weight: 800;
-        font-size: 42px;
-        line-height: 165.9%;
-        span {
-            color: $main-color;
-        }
+        text-align: left;
         margin-bottom: 41px;
     }
     &__divider {

@@ -1,22 +1,13 @@
 .steps {
     padding-top: 93px;
     background-color: #F1F5F9;
-    &__header {
+    &__subheader {
         font-weight: 600;
         font-size: 16px;
         line-height: 165.9%;
         text-align: center;
         color: $main-color;
         margin-bottom: 13px;
-    }
-    &__subheader {
-        font-weight: 800;
-        font-size: 42px;
-        line-height: 165.9%;
-        text-align: center;
-        span {
-            color: $main-color;
-        }
     }
     &__wrapper {
         padding-top: 72px;

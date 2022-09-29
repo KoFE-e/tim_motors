@@ -2,14 +2,8 @@
     padding: 68px 0 82px 0;
     background-color: #F1F5F9;
     &__details {
-        &__subheader {
-            font-weight: 800;
-            font-size: 42px;
+        &__header {
             margin-bottom: 46px;
-            text-align: center;
-            span {
-                color: $main-color;
-            }
         }
         &__descr {
             text-align: center;
