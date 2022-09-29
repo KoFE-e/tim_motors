@@ -93,6 +93,9 @@
             border: 1px solid $main-color;
             text-indent: -9999px;
             transition: 0.3s all;
+            &:focus, &:active, &:hover {
+                outline: none;
+            }
         }
     
         li.slick-active button {
