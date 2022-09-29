@@ -5,6 +5,7 @@
         width: 297px;
         height: 127px;
         img {
+            max-height: 100%;
             width: 100%;
             object-fit: cover;
         }
