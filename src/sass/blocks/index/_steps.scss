@@ -20,7 +20,7 @@
             .steps__item {
                 &:nth-child(2) {
                     &:before {
-                        content: url("../icons/steps/up_dash.svg");
+                        content: url("../icons/home/steps/up_dash.svg");
                         display: block;
                         position: absolute;
                         right: -100px;
@@ -65,7 +65,7 @@
         }
         &:nth-child(1) {
             &:before {
-                content: url("../icons/steps/down_dash.svg");
+                content: url("../icons/home/steps/down_dash.svg");
                 display: block;
                 position: absolute;
                 right: -100px;

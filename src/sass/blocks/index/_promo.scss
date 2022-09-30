@@ -1,6 +1,6 @@
 .promo {
     min-height: 100vh;
-    background: url("../img/promo/promo_bg.jpg") center (center/cover) no-repeat;
+    background: url("../img/home/promo/promo_bg.jpg") center (center/cover) no-repeat;
     background-color: rgba(0, 0, 0, 0.4);
     position: relative;
     display: flex;
@@ -54,7 +54,7 @@
             cursor: pointer;
             transition: 0.3s all;
             &:before {
-                content: url("../icons/promo/arrow-down.svg");
+                content: url("../icons/home/promo/arrow-down.svg");
                 display: block;
                 position: absolute;
                 right: -30px;

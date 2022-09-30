@@ -129,24 +129,47 @@
         <div class="container container_fluid">
             <div class="catalog__wrapper">
                 <div class="catalog__filters">
-                    <div class="catalog__filter" id="cost-range">
-                        <div class="sliders_step1">
-                            <div class="flat-slider" id="slider-range"></div>
+                    <div class="catalog__filter">
+                        <div class="catalog__filter-name">ДИАПАЗОН ЦЕН</div>
+                        <div class="filter-slider" id="cost-range"></div>
+                        <div class="catalog__filter__ranges">
+                            <div class="catalog__filter-range" id="cost-range-min">От $7200</div>
+                            <div class="catalog__filter-range" id="cost-range-max">До $10000</div>
                         </div>
-                        <div class="slider-cost">От $7200</div>
-                        <div class="slider-cost2">До $10000</div>
                     </div>
-
-                    <div class="catalog__filter" id="cost-range">
-                        <span class="slider-time">5.00pm</span> <span class="slider-time2">11.00pm</span>
-                        </p>
-                        <div class="sliders_step1">
-                            <div class="flat-slider" id="slider-range"></div>
+                    <div class="catalog__filter">
+                        <div class="catalog__filter-name">ГОД</div>
+                        <div class="filter-slider" id="year-range"></div>
+                        <div class="catalog__filter__ranges">
+                            <div class="catalog__filter-range" id="year-range-min">2018</div>
+                            <div class="catalog__filter-range" id="year-range-max">2023</div>
                         </div>
+                    </div>
+                    <div class="catalog__models">
+                        <div class="catalog__models-item" data-model="audi">Audi</div>
+                        <div class="catalog__models-item" data-model="bmw">BMW</div>
+                        <div class="catalog__models-item" data-model="cadillac">Cadillac</div>
+                        <div class="catalog__models-item" data-model="dodge">Dodge</div>
+                        <div class="catalog__models-item" data-model="ford">Ford</div>
+                        <div class="catalog__models-item" data-model="hyundai">Hyundai</div>
+                        <div class="catalog__models-item" data-model="infinity">Infinity</div>
+                        <div class="catalog__models-item" data-model="kia">KIA</div>
+                        <div class="catalog__models-item" data-model="land_rover">Land Rover</div>
+                        <div class="catalog__models-item" data-model="lexus">Lexus</div>
+                        <div class="catalog__models-item" data-model="nissan">Nissan</div>
+                        <div class="catalog__models-item" data-model="mercedes">Mercedes</div>
+                        <div class="catalog__models-item" data-model="mitsubisi">Mitsubisi</div>
+                        <div class="catalog__models-item" data-model="porsche">Porsche</div>
+                        <div class="catalog__models-item" data-model="toyota">Toyota</div>
+                        <div class="catalog__models-item" data-model="volks_wagen">Volks Wagen</div>
+                        <div class="catalog__models-item" data-model="isuzu">ISUZU</div>
+                        <div class="catalog__models-item" data-model="1">1</div>
                     </div>
                 </div>
                 <div class="catalog__items">
-                    
+                    <h1 class="catalog__items-header">
+                        Выберите <span>тип транспорта</span>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -194,11 +217,8 @@
   src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
-    <script
-  src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
-  integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
-  crossorigin="anonymous"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/libs/nouislider.min.js"></script>
+    <script src="js/general_scripts.js"></script>
+    <script src="js/script_catalog.js"></script>
 </body>
 </html>

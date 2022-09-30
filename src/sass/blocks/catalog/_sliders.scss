@@ -1,86 +1,36 @@
-#cost-range {
-    width: 396px;
-    margin: 0 auto;
-    font-weight: 300;
+.filter {
+    &-slider {
+        max-width: 396px;
+    }
 }
 
-.slider-cost,
-.slider-cost2 {
-    font-weight: 400;
-}
-
-.flat-slider {
-    position: relative;
-}
-
-.flat-slider.ui-corner-all,
-.flat-slider .ui-corner-all {
-    border-radius: 0;
-}
-
-.flat-slider.ui-slider {
-    border: 0;
-    background: #C3D4E9;
-    border-radius: 6px;
-}
-
-.flat-slider.ui-slider-horizontal {
-    height: 16px;
-}
-
-.flat-slider.ui-slider-vertical {
-    height: 15em;
-    width: 16px;
-}
-
-.flat-slider .ui-slider-handle {
-    display: block;
-    width: 26px;
-    height: 26px;
-    background: $main-color;
-    border-radius: 100%;
-    border: 5px solid #fff;
-    cursor: pointer;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-    transition: 0.3s box-shadow;
-}
-
-.flat-slider.ui-slider-horizontal .ui-slider-handle {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.flat-slider.ui-slider-vertical .ui-slider-handle {
-    position: absolute;
-    left: 50%;
-    margin-left: -11px;
-}
-
-.flat-slider .ui-slider-handle:hover {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
-}
-
-.flat-slider .ui-slider-range {
-    border: 0;
-    border-radius: 16px;
-    background: $main-color;
-}
-
-.flat-slider.ui-slider-horizontal .ui-slider-range {
-    position: absolute;
-    top: 0;
-    height: 16px;
-}
-
-.flat-slider.ui-slider-vertical .ui-slider-range {
-    position: absolute;
-    left: 0;
-    width: 16px;
-}
-
-.ui {
-    &-state-active, &-state-hover, &-state-focus {
-        outline: none;
+.noUi {
+    &-horizontal {
+        height: 16px;
+        .noUi-handle {
+            width: 30px;
+            height: 30px;
+            top: -7px;
+            border-radius: 100%;
+            border: 6px solid #fff;
+            background-color: $main-color;
+            box-shadow: none;
+            cursor: pointer;
+            &:before, &:after {
+                display: none;
+            }
+        }
+    }
+    &-target {
+        background-color: #C3D4E9;
+        border: none;
+        border-radius: 16px;
+        box-shadow: none;
+    }
+    &-connect {
+        background-color: $main-color;
+    }
+    &-connects {
+        border-radius: 16px;
     }
 }

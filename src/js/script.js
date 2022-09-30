@@ -1,24 +1,3 @@
-//animations
-
-const fadeIn = (el, timeout, display) => {
-    el.style.opacity = 0;
-    el.style.display = display || 'block';
-    el.style.transition = `opacity ${timeout}ms`;
-    setTimeout(() => {
-      el.style.opacity = 1;
-    }, 10);
-};
-
-const fadeOut = (el, timeout) => {
-    el.style.opacity = 1;
-    el.style.transition = `opacity ${timeout}ms`;
-    el.style.opacity = 0;
-  
-    setTimeout(() => {
-      el.style.display = 'none';
-    }, timeout);
-};
-
 //dropdown_menu
 
 const dropdowns = document.querySelectorAll('.promo__search__item');
@@ -62,7 +41,6 @@ questions.forEach(question => {
     const horizontal = question.querySelector('.horizontal');
     const title = question.querySelector('.questions__title');
     const questionMaxHeight = getComputedStyle(question).maxHeight;
-    console.log(questionMaxHeight);
 
     title.addEventListener('click', () => {
         if (!answer.classList.contains('expanded')) {
@@ -84,28 +62,7 @@ questions.forEach(question => {
 
 //jquery scripts
 $(document).ready(function(){
-    // scroll_icon
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 800) {
-            $('.pageup').fadeIn();
-        } else {
-            $('.pageup').fadeOut();
-        }
-    });
-
-    $("a[href^='#up']").click(function() {
-        const _href = $(this).attr("href");
-        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
-        return false;
-    });
-
-    $("a[href^='#']").click(function() {
-        const _href = $(this).attr("href");
-        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
-        return false;
-    });
-    
-    //slider
+    //slider_news
 
     $('.news__inner').slick({
         speed: 1200,
@@ -115,8 +72,8 @@ $(document).ready(function(){
         swipe: false,
         autoplaySpeed: 5000,
         slidesToShow: 1,
-        prevArrow: '<button type="button" class="slick-prev"><img src="icons/slider/left.png"></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="icons/slider/right.png"></button>',
+        prevArrow: '<button type="button" class="slick-prev"><img src="icons/home/slider/left.png"></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="icons/home/slider/right.png"></button>',
         responsive: [{
             breakpoint: 768,
             settings: {
@@ -125,33 +82,5 @@ $(document).ready(function(){
                 dots: true
             }
         }]
-    });
-
-    //sliders
-    $("#slider-range").slider({
-        range: true,
-        min: 7200,
-        max: 10000,
-        step: 1,
-        values: [7200, 10000],
-        slide: function(e, ui) {
-            var min = Math.floor(ui.values[0]);
-            $('.slider-cost').html('От $'+ min);
-    
-            var max = Math.floor(ui.values[1]);
-            
-            $('.slider-cost2').html('От $'+ max);
-    
-            $('.box').each(function() {
-                var startCost = (min);
-                var endCost = (max);
-                var value = $(this).data('cost');
-                if ((parseInt(endCost) >= parseInt(value) && (parseInt(startCost) <= parseInt(value))) ){
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-            });
-        }
     });
 });
