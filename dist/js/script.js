@@ -126,4 +126,32 @@ $(document).ready(function(){
             }
         }]
     });
+
+    //sliders
+    $("#slider-range").slider({
+        range: true,
+        min: 7200,
+        max: 10000,
+        step: 1,
+        values: [7200, 10000],
+        slide: function(e, ui) {
+            var min = Math.floor(ui.values[0]);
+            $('.slider-cost').html('От $'+ min);
+    
+            var max = Math.floor(ui.values[1]);
+            
+            $('.slider-cost2').html('От $'+ max);
+    
+            $('.box').each(function() {
+                var startCost = (min);
+                var endCost = (max);
+                var value = $(this).data('cost');
+                if ((parseInt(endCost) >= parseInt(value) && (parseInt(startCost) <= parseInt(value))) ){
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+    });
 });
