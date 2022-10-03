@@ -1,7 +1,62 @@
 @media (max-width: 1600px) {
     .catalog {
+        &__wrapper {
+            grid-template-columns: 400px auto;
+        }
         &__list {
-            grid-template-columns: repeat(2, minmax(600px,auto));
+            grid-template-columns: repeat(2, 450px);
+            grid-template-rows: repeat(2,minmax(580px,auto));
+            grid-auto-rows: minmax(580px,auto);
+        }
+        &__models {
+            &-item {
+                height: 60px;
+                font-size: 22px;
+            }
+        }
+        &__categories {
+            margin-top: 50px;
+            padding: 0 80px;
+            &__item {
+                &-descr {
+                    font-size: 20px;
+                    margin-top: 33px;
+                }
+            }
+            &-btn {
+                width: 115px;
+                height: 115px;
+            }
+        }
+        &__filter {
+            &-range {
+                font-size: 22px;
+            }
+        }
+        &__card {
+            &-img {
+                height: 270px;
+            }
+            &-more {
+                width: 250px;
+                font-size: 14px;
+                height: 30px;
+            }
+            &-text {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            &-descr {
+                font-size: 22px;
+            }
+            &-price {
+                &-cost {
+                    font-size: 20px;
+                }
+            }
+            &-btn {
+                font-size: 22px;
+            }
         }
     }
 }

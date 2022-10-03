@@ -175,7 +175,7 @@
             display: block;
             margin: 0 auto;
             transition: 0.3s all;
-            max-width: 507px;
+            max-width: 90%;
             min-height: 303px;
             object-fit: contain;
             &:hover {
@@ -198,7 +198,6 @@
             font-weight: 600;
             font-size: 16px;
             line-height: 165.9%;
-            margin-top: 23px;
             border: 1px solid #000000;
             border-radius: 4px;
         }
