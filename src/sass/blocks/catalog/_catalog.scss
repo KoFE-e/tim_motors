@@ -1,7 +1,7 @@
 .catalog {
     &__wrapper {
         display: grid;
-        grid-template-columns: 25% 75%;
+        grid-template-columns: 482px auto;
     }
     &__filters {
         position: relative;
@@ -74,6 +74,240 @@
             font-size: 33px;
             span {
                 color: $main-color;
+            }
+        }
+    }
+    &__categories {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 130px;
+        margin-top: 75px;
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &-descr {
+                margin-top: 43px;
+                font-weight: 600;
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+        &-btn {
+            display: block;
+            border: none;
+            width: 125px;
+            height: 125px;
+            background-color: #F1F5F9;
+            box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
+            border-radius: 24px;
+            transition: 0.3s all;
+            svg path{
+                transition: 0.3s all;
+            }
+            &:focus, &:hover, &:active {
+                outline: none;
+            }
+            &:hover {
+                background-color: $main-color;
+                svg path{
+                    fill: #fff;
+                }
+            }
+        }
+    }
+    &__list {
+        margin-top: 85px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(624px, auto));
+        grid-template-rows: repeat(2, minmax(642px, auto));
+        grid-auto-rows: minmax(642px, auto);
+        justify-content: center;
+        row-gap: 23px;
+        column-gap: 27px;
+    }
+    &__card {
+        position: relative;
+        background: #F1F5F9;
+        box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
+        border-radius: 24px;
+        &-more {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 287px;
+            height: 37px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            background: #1476FF;
+            border-radius: 24px 0px 68px;
+            z-index: 2;
+            transition: 0.3s all;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        &-img {
+            cursor: pointer;
+            position: relative;
+            width: 93%;
+            height: 306px;
+            background-color: #fff;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 18px;
+            border-radius: 34px;
+            z-index: 1;
+        }
+        &-photo {
+            display: block;
+            margin: 0 auto;
+            transition: 0.3s all;
+            max-width: 507px;
+            min-height: 303px;
+            object-fit: contain;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        &-logo {
+            position: absolute;
+            display: block;
+            top: 20px;
+            right: 30px;
+        }
+        &-text {
+            padding: 23px 52px 31px 52px;
+        }
+        &-year {
+            text-align: center;
+            width: 66px;
+            height: 24px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 165.9%;
+            margin-top: 23px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+        }
+        &-descr {
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 11px;
+        }
+        &-prices {
+            margin-top: 6px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 42px;
+        }
+        &-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            &-cost {
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 165.9%;
+            }
+            &-descr {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 133.4%;
+                color: #B4B4B4;
+            }
+            &:first-child {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    right: -25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 30px;
+                    width: 1px;
+                    display: block;
+                    background-color: #000;
+                }
+            }
+        }
+        &-divider {
+            width: 100%;
+            background-color: #D7D7D7;
+            height: 1px;
+            margin-top: 22px;
+        }
+        &-characteristics {
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 35px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 160.4%;
+            color: #727272;
+            &-ls {
+                span {
+                    color: #90A3BF;
+                    font-weight: 800;
+                    font-size: 20px;
+                }
+            }
+            &-trans, &-fuel {
+                display: flex;
+                align-items: center;
+            }
+            &-img {
+                margin-right: 20px;
+            }
+        }
+        &__btn {
+            margin-top: 23px;
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: 47px;
+            color: #fff;
+            background: #1476FF;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 24px;
+            padding-top: 5px;
+            line-height: 165.9%;
+            transition: 0.3s all;
+            &:hover {
+                text-decoration: none;
+                color: #fff;
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.mixitup {
+    &-control {
+        &-active {
+            color: #fff;
+            background-color: $main-color;
+            svg path{
+                fill: #fff;
+            }
+            &:hover {
+                color: #fff;
             }
         }
     }

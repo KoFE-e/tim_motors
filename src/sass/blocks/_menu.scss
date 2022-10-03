@@ -60,7 +60,9 @@ header {
             @include a_reset;
             svg {
                 margin-right: 22px;
-                transition: 0.3s all;
+                path {
+                    transition: 0.3s all;
+                }
             }
             &:hover {
                 background-color: $main-color;
@@ -93,15 +95,13 @@ header {
             box-shadow: 4.9px 4.9px 9.8px #C9D9E8, -4.9px -4.9px 9.8px #FFFFFF;
             transition: 0.3s all;
             @include a_reset;
-            svg {
+            svg path{
                 transition: 0.3s all;
             }
             &:hover {
                 background-color: $main-color;
-                svg {
-                    path{
-                        fill: #FFFFFF;
-                    }
+                svg path{
+                    fill: #FFFFFF;
                 }
             }
         }

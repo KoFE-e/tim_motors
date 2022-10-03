@@ -1,14 +1,17 @@
+const allCars = document.querySelectorAll('.catalog__card');
+var carYear, carCost;
+
 //cost_filter
 
 var costSlider = document.getElementById('cost-range');
 
 noUiSlider.create(costSlider, {
-    start: [7200, 10000],
+    start: [0, 1000000],
     connect: true,
     step: 1,
     range: {
-        'min': [7200],
-        'max': [10000]
+        'min': [0],
+        'max': [1000000]
     }
 });
 
@@ -17,14 +20,30 @@ var costValues = [
     document.getElementById('cost-range-max')
 ];
 
+var costRange = [
+    parseInt(costValues[0].innerHTML.slice(4).replace(/\s+/g, '')),
+    parseInt(costValues[1].innerHTML.slice(4).replace(/\s+/g, ''))
+];
+
+
+var yearValues = [
+    document.getElementById('year-range-min'),
+    document.getElementById('year-range-max')
+];
+
+var yearRange = [
+    parseInt(yearValues[0].innerHTML),
+    parseInt(yearValues[1].innerHTML)
+];
+
 //refresh_cost_range
 
 costSlider.noUiSlider.on('update', function (values, handle) {
     if (handle == 0) {
-        costValues[handle].innerHTML = 'От $' + parseInt(values[handle]);
+        costValues[handle].innerHTML = 'От $' + parseInt(values[handle]).toLocaleString();
     }
     else {
-        costValues[handle].innerHTML = 'До $' + parseInt(values[handle]);
+        costValues[handle].innerHTML = 'До $' + parseInt(values[handle]).toLocaleString();
     }
 });
 
@@ -33,8 +52,8 @@ costSlider.noUiSlider.on('update', function (values, handle) {
 var yearSlider = document.getElementById('year-range');
 
 noUiSlider.create(yearSlider, {
-    start: 2018,
-    connect: [true, false],
+    start: [2018, 2023],
+    connect: true,
     step: 1,
     range: {
         'min': [2018],
@@ -42,26 +61,59 @@ noUiSlider.create(yearSlider, {
     }
 });
 
-//selected_year
+//refresh_years_range
 
-var yearSelected = 2018;
-
-yearSlider.noUiSlider.on('update', function (value) {
-    yearSelected = parseInt(value);
+yearSlider.noUiSlider.on('update', function (values, handle) {
+    if (handle == 0) {
+        yearValues[handle].innerHTML = parseInt(values[handle]);
+    }
+    else {
+        yearValues[handle].innerHTML = parseInt(values[handle]);
+    }
 });
 
-//models__filter
+//filtering_mixitup
 
-const models = document.querySelectorAll('.catalog__models-item');
+var mixer = mixitup('.catalog__list', {
+    selectors: {
+        target: '.catalog__card'
+    },
+    animation: {
+        effectsIn: 'fade',
+        effectsOut: 'fade',
+        duration: 300
+    },
+    multifilter: {
+        enable: true
+    }
+});
 
-models.forEach(model => {
-    model.addEventListener('click', () => {
-        if(!model.classList.contains("catalog__models-item_selected")) {
-            model.classList.add("catalog__models-item_selected");
-            //console.log(model.dataset.model);
+costSlider.noUiSlider.on('set', function (values, handle) {
+    costRange[handle] = parseInt(values[handle]);
+    allCars.forEach(item => {
+        carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
+        carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
+        if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
+            fadeOut(item, 300);
         }
         else {
-            model.classList.remove("catalog__models-item_selected");
+            fadeIn(item, 300);
+        }
+    });
+});
+
+yearSlider.noUiSlider.on('set', function (values, handle) {
+    yearRange[handle] = parseInt(values[handle]);
+    allCars.forEach(item => {
+        carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
+        carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
+        if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
+            fadeOut(item, 300);
+        }
+        else {
+            if(getComputedStyle(item).display == 'none'){
+                fadeIn(item, 300);
+            }
         }
     });
 });

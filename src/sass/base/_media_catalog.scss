@@ -1,0 +1,7 @@
+@media (max-width: 1600px) {
+    .catalog {
+        &__list {
+            grid-template-columns: repeat(2, minmax(600px,auto));
+        }
+    }
+}
