@@ -6,7 +6,7 @@ dropdowns.forEach(dropdown => {
     const select = dropdown.querySelector('.promo__search__category');
     const menu = dropdown.querySelector('.dropdown__list');
     const options = dropdown.querySelectorAll('.dropdown__item');
-    const selected = dropdown.querySelector('.selected');
+    const selected = dropdown.querySelector('.selected_dropdown');
 
     select.addEventListener('click', () => {
         if (getComputedStyle(menu).display == "none") {

@@ -136,6 +136,7 @@
         background: #F1F5F9;
         box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
         border-radius: 24px;
+        transition: 0.3s all;
         &-more {
             position: absolute;
             top: 0;
@@ -309,5 +310,16 @@
                 color: #fff;
             }
         }
+    }
+}
+
+.selected {
+    color: #fff;
+    background-color: $main-color;
+    svg path{
+        fill: #fff;
+    }
+    &:hover {
+        color: #fff;
     }
 }

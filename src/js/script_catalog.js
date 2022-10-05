@@ -1,26 +1,4 @@
 const allCars = document.querySelectorAll('.catalog__card');
-var carYear, carCost;
-const beginUrl = new URL('http://localhost:3000/catalog.html');
-var url = new URL('http://localhost:3000/catalog.html');
-var params = new URLSearchParams(url.search);
-const allCategories = document.querySelectorAll('.catalog__categories-btn');
-const allBrands = document.querySelectorAll('.catalog__models-item');
-var selectedCategories = [];
-var selectedBrands = [];
-
-//select_filters
-
-allCategories.forEach(item => {
-    item.addEventListener('click', () => {
-        if(!item.classList.contains('selected')) {
-            item.classList.add('selected');
-        }
-        else {
-            item.classList.remove('selected');
-        }
-    });
-});
-
 
 //create_sliders
 
@@ -70,6 +48,55 @@ var yearRange = [
     parseInt(yearValues[1].innerHTML)
 ];
 
+//filter
+
+function filter(costRange, yearRange, selectedCategories, selectedBrands) {
+    allCars.forEach(item => {
+        let carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
+        let carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
+        let carBrand = item.getAttribute('data-brand');
+        let carCategory = item.getAttribute('data-category');
+        if (selectedBrands.length != 0 && selectedCategories.length != 0) {
+            if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
+                && selectedCategories.includes(carCategory) && selectedBrands.includes(carBrand))) {
+                fadeOut(item, 300);
+            }
+            else {
+                if(getComputedStyle(item).display == 'none')
+                    fadeIn(item, 300);
+            }
+        }
+        else if (selectedBrands.length != 0) {
+            if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
+                && selectedBrands.includes(carBrand))) {
+                fadeOut(item, 300);
+            }
+            else {
+                if(getComputedStyle(item).display == 'none')
+                    fadeIn(item, 300);
+            }
+        }
+        else if (selectedCategories.length != 0) {
+            if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
+                && selectedCategories.includes(carCategory))) {
+                fadeOut(item, 300);
+            }
+            else {
+                if(getComputedStyle(item).display == 'none')
+                    fadeIn(item, 300);
+            }
+        }
+        else {
+            if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
+                fadeOut(item, 300);
+            }
+            else {
+                if(getComputedStyle(item).display == 'none')
+                    fadeIn(item, 300);
+            }
+        }
+    });
+};
 
 //refresh_cost_range
 
@@ -93,103 +120,71 @@ yearSlider.noUiSlider.on('update', function (values, handle) {
     }
 });
 
-//filter_function
-
-// var filteredItems = [];
-
-// var mixer = mixitup('.catalog__list', {
-//     animation: {
-//         effectsIn: 'fade',
-//         effectsOut: 'fade',
-//         duration: 300
-//     },
-//     callbacks: {
-//         onMixStart: function(state) {
-//             filteredItems = state.show;
-            
-//         },
-//         onMixEnd: function(state) {
-//             filteredItems = state.show;
-//             filtercostandyear(filteredItems, yearRange, costRange);
-//         }
-//     },
-//     multifilter: {
-//         enable: true
-//     }
-// });
-
-// function filtercostandyear(arr, params) {
-//     arr.forEach(item => {
-//         carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
-//         carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
-//         if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
-//             fadeOut(item, 300);
-//         }
-//         else {
-//             if(getComputedStyle(item).display == 'none')
-//                 fadeIn(item, 300);
-//         }
-//     });
-//     console.log(arr);
-// };
-
-
-
-//updating_filters
+//updating_sliders
 
 costSlider.noUiSlider.on('set', function (values, handle) {
     costRange[handle] = parseInt(values[handle]);
-    if (handle == 0) {
-        params.delete('min-cost');
-        params.append('min-cost', costRange[handle]);
-    }
-    else {
-        params.delete('max-cost');
-        params.append('max-cost', costRange[handle]);
-    }
-    url = beginUrl + '?' + params;
-    window.history.pushState("", "", url);
-    // filteredItems = mixer.getState().show;
-    // console.log(filteredItems);
-    // filteredItems.forEach(item => {
-    //     carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
-    //     carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
-    //     if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
-    //         fadeOut(item, 300);
-    //     }
-    //     else {
-    //         if(getComputedStyle(item).display == 'none')
-    //             fadeIn(item, 300);
-    //     }
-    // });
+    filter(costRange, yearRange, selectedCategories, selectedBrands);
 });
 
 yearSlider.noUiSlider.on('set', function (values, handle) {
     yearRange[handle] = parseInt(values[handle]);
-    // filteredItems = mixer.getState().show;
-    if (handle == 0) {
-        params.delete('min-year');
-        params.append('min-year', yearRange[handle]);
-    }
-    else {
-        params.delete('max-year');
-        params.append('max-year', yearRange[handle]);
-    }
-    url = beginUrl + '?' + params;
-    window.history.pushState("", "", url);
-
-    // filteredItems.forEach(item => {
-    //     carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
-    //     carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
-    //     if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
-    //         fadeOut(item, 300);
-    //     }
-    //     else {
-    //         if(getComputedStyle(item).display == 'none')
-    //             fadeIn(item, 300);
-    //     }
-    // });
+    filter(costRange, yearRange, selectedCategories, selectedBrands);
 });
+
+
+const allCategories = document.querySelectorAll('.catalog__categories-btn');
+const allBrands = document.querySelectorAll('.catalog__models-item');
+var selectedCategories = [];
+var selectedBrands = [];
+
+//adding_selected_classes
+
+allCategories.forEach(item => {
+    item.addEventListener('click', () => {
+        var category = item.getAttribute('data-category');
+        if(!item.classList.contains('selected')) {
+            item.classList.add('selected');
+            if (!selectedCategories.includes(category)) {
+                selectedCategories.push(category);
+            }
+            console.log(selectedCategories);
+        }
+        else {
+            let index = selectedCategories.indexOf(category);
+            if (index != -1) {
+                selectedCategories.splice(index, 1);
+            }
+            console.log(selectedCategories);
+            item.classList.remove('selected');
+        }
+        filter(costRange, yearRange, selectedCategories, selectedBrands);
+    });
+});
+
+allBrands.forEach(item => {
+    item.addEventListener('click', () => {
+        var brand = item.getAttribute('data-brand');
+        if(!item.classList.contains('selected')) {
+            item.classList.add('selected');
+            if (!selectedBrands.includes(brand)) {
+                selectedBrands.push(brand);
+            }
+            console.log(selectedBrands);
+        }
+        else {
+            let index = selectedBrands.indexOf(brand);
+            if (index != -1) {
+                selectedBrands.splice(index, 1);
+            }
+            console.log(selectedBrands);
+            item.classList.remove('selected');
+        }
+        filter(costRange, yearRange, selectedCategories, selectedBrands);
+    });
+});
+
+
 
 
 
