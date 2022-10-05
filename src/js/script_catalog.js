@@ -1,7 +1,28 @@
 const allCars = document.querySelectorAll('.catalog__card');
 var carYear, carCost;
+const beginUrl = new URL('http://localhost:3000/catalog.html');
+var url = new URL('http://localhost:3000/catalog.html');
+var params = new URLSearchParams(url.search);
+const allCategories = document.querySelectorAll('.catalog__categories-btn');
+const allBrands = document.querySelectorAll('.catalog__models-item');
+var selectedCategories = [];
+var selectedBrands = [];
 
-//cost_filter
+//select_filters
+
+allCategories.forEach(item => {
+    item.addEventListener('click', () => {
+        if(!item.classList.contains('selected')) {
+            item.classList.add('selected');
+        }
+        else {
+            item.classList.remove('selected');
+        }
+    });
+});
+
+
+//create_sliders
 
 var costSlider = document.getElementById('cost-range');
 
@@ -15,6 +36,20 @@ noUiSlider.create(costSlider, {
     }
 });
 
+var yearSlider = document.getElementById('year-range');
+
+noUiSlider.create(yearSlider, {
+    start: [2018, 2023],
+    connect: true,
+    step: 1,
+    range: {
+        'min': [2018],
+        'max': [2023]
+    }
+});
+
+//create_arrays_for_range_sliders
+
 var costValues = [
     document.getElementById('cost-range-min'),
     document.getElementById('cost-range-max')
@@ -24,7 +59,6 @@ var costRange = [
     parseInt(costValues[0].innerHTML.slice(4).replace(/\s+/g, '')),
     parseInt(costValues[1].innerHTML.slice(4).replace(/\s+/g, ''))
 ];
-
 
 var yearValues = [
     document.getElementById('year-range-min'),
@@ -36,6 +70,7 @@ var yearRange = [
     parseInt(yearValues[1].innerHTML)
 ];
 
+
 //refresh_cost_range
 
 costSlider.noUiSlider.on('update', function (values, handle) {
@@ -44,20 +79,6 @@ costSlider.noUiSlider.on('update', function (values, handle) {
     }
     else {
         costValues[handle].innerHTML = 'До $' + parseInt(values[handle]).toLocaleString();
-    }
-});
-
-//year_filter
-
-var yearSlider = document.getElementById('year-range');
-
-noUiSlider.create(yearSlider, {
-    start: [2018, 2023],
-    connect: true,
-    step: 1,
-    range: {
-        'min': [2018],
-        'max': [2023]
     }
 });
 
@@ -72,48 +93,103 @@ yearSlider.noUiSlider.on('update', function (values, handle) {
     }
 });
 
-//filtering_mixitup
+//filter_function
 
-var mixer = mixitup('.catalog__list', {
-    selectors: {
-        target: '.catalog__card'
-    },
-    animation: {
-        effectsIn: 'fade',
-        effectsOut: 'fade',
-        duration: 300
-    },
-    multifilter: {
-        enable: true
-    }
-});
+// var filteredItems = [];
+
+// var mixer = mixitup('.catalog__list', {
+//     animation: {
+//         effectsIn: 'fade',
+//         effectsOut: 'fade',
+//         duration: 300
+//     },
+//     callbacks: {
+//         onMixStart: function(state) {
+//             filteredItems = state.show;
+            
+//         },
+//         onMixEnd: function(state) {
+//             filteredItems = state.show;
+//             filtercostandyear(filteredItems, yearRange, costRange);
+//         }
+//     },
+//     multifilter: {
+//         enable: true
+//     }
+// });
+
+// function filtercostandyear(arr, params) {
+//     arr.forEach(item => {
+//         carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
+//         carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
+//         if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
+//             fadeOut(item, 300);
+//         }
+//         else {
+//             if(getComputedStyle(item).display == 'none')
+//                 fadeIn(item, 300);
+//         }
+//     });
+//     console.log(arr);
+// };
+
+
+
+//updating_filters
 
 costSlider.noUiSlider.on('set', function (values, handle) {
     costRange[handle] = parseInt(values[handle]);
-    allCars.forEach(item => {
-        carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
-        carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
-        if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
-            fadeOut(item, 300);
-        }
-        else {
-            fadeIn(item, 300);
-        }
-    });
+    if (handle == 0) {
+        params.delete('min-cost');
+        params.append('min-cost', costRange[handle]);
+    }
+    else {
+        params.delete('max-cost');
+        params.append('max-cost', costRange[handle]);
+    }
+    url = beginUrl + '?' + params;
+    window.history.pushState("", "", url);
+    // filteredItems = mixer.getState().show;
+    // console.log(filteredItems);
+    // filteredItems.forEach(item => {
+    //     carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
+    //     carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
+    //     if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
+    //         fadeOut(item, 300);
+    //     }
+    //     else {
+    //         if(getComputedStyle(item).display == 'none')
+    //             fadeIn(item, 300);
+    //     }
+    // });
 });
 
 yearSlider.noUiSlider.on('set', function (values, handle) {
     yearRange[handle] = parseInt(values[handle]);
-    allCars.forEach(item => {
-        carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
-        carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
-        if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
-            fadeOut(item, 300);
-        }
-        else {
-            if(getComputedStyle(item).display == 'none'){
-                fadeIn(item, 300);
-            }
-        }
-    });
+    // filteredItems = mixer.getState().show;
+    if (handle == 0) {
+        params.delete('min-year');
+        params.append('min-year', yearRange[handle]);
+    }
+    else {
+        params.delete('max-year');
+        params.append('max-year', yearRange[handle]);
+    }
+    url = beginUrl + '?' + params;
+    window.history.pushState("", "", url);
+
+    // filteredItems.forEach(item => {
+    //     carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
+    //     carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
+    //     if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
+    //         fadeOut(item, 300);
+    //     }
+    //     else {
+    //         if(getComputedStyle(item).display == 'none')
+    //             fadeIn(item, 300);
+    //     }
+    // });
 });
+
+
+
