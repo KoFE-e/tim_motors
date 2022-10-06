@@ -1,5 +1,6 @@
 .team {
     padding: 68px 0 82px 0;
+    position: relative;
     background-color: #F1F5F9;
     &__details {
         &__header {
@@ -71,7 +72,7 @@
             display: flex;
             align-items: center;
             width: 682px;
-            height: 102px;
+            min-height: 102px;
             box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
             border-radius: 24px;
             padding: 23px 27px;
