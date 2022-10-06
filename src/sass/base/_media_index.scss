@@ -973,6 +973,7 @@
             column-gap: 0;
         }
         &__card {
+            background: #5CAFFC;
             width: 100%;
             height: 103px;
             padding: 20px;
@@ -1078,6 +1079,7 @@
         }
     }
     .news {
+        padding-bottom: 0;
         background-position: right bottom 20%;
         &__inner {
             width: 270px;
@@ -1113,5 +1115,90 @@
     }
     .slick-dots {
         margin-left: 15px;
+    }
+    .jumbo {
+        min-height: 300px;
+    }
+    .youtube {
+        padding-top: 50px;
+        &__header {
+            display: none;
+        }
+        &__video {
+            margin-top: 33px;
+            padding: 0;
+            iframe {
+                width: 100%;
+                height: 203px;
+            }
+        }
+    }
+    .questions {
+        padding: 40px 0;
+        &__header {
+            font-size: 12px;
+        }
+        &__item {
+            border-radius: 5px;
+            width: 300px;
+            min-height: 28px;
+            padding: 5px 8px;
+        }
+        &__name {
+            margin-left: 14px;
+            font-size: 12px;
+        }
+        &__icon {
+            width: 17px;
+            height: 17px;
+            span {
+                width: 8px;
+                height: 1px;
+            }
+        }
+        &__answer {
+            margin-top: 15px;
+            font-size: 12px;
+            padding: 0 8px 15px 8px;
+        }
+    }
+    .pageup {
+        bottom: 20px;
+        right: 20px;
+    }
+    .footer {
+        padding: 50px 30px;
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        &__logo {
+            width: 150px;
+            height: 100px;
+            transform: scale(1);
+            &__img {
+                object-fit: cover;
+                position: relative;
+                top: auto;
+                left: auto;
+            }
+        }
+        &__contacts {
+            .footer__subheader {
+                display: none;
+            }
+        }
+        div {
+            &:first-child {
+                order: 2;
+            }
+            &:nth-child(2) {
+                order: 1;
+            }
+            &:last-child {
+                order: 3;
+            }
+        }
     }
 }
