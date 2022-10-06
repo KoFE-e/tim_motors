@@ -75,7 +75,7 @@ $(document).ready(function(){
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/home/slider/left.png"></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icons/home/slider/right.png"></button>',
         responsive: [{
-            breakpoint: 768,
+            breakpoint: 992,
             settings: {
                 swipe: true,
                 arrows: false,

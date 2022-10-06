@@ -7,6 +7,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    &__wrapper {
+        position: relative;
+        z-index: 3;
+    }
     &__logo {
         margin-bottom: 30px;
     }
@@ -18,7 +22,7 @@
         border-radius: 2px;
         margin-bottom: 30px;
     }
-    &__subheader {
+    &__header {
         margin-bottom: 0;
         font-weight: 700;
         font-size: 24px;
@@ -30,7 +34,7 @@
         width: 1200px;
         height: 130px;
         position: absolute;
-        z-index: 1;
+        z-index: 5;
         left: 50%;
         transform: translateX(-50%);
         bottom: -50px;
@@ -42,6 +46,12 @@
         justify-content: space-between;
         padding: 12px 12px 12px 102px;
         align-items: center;
+        &__divider {
+            display: none;
+            width: 285px;
+            height: 1px;
+            background-color: #F3F8FF;
+        }
         &__dropdown {
             position: relative;
         }
@@ -81,6 +91,48 @@
             @include btn_animation;
         }
     }
+    &__circle {
+        display: none;
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        z-index: 2;
+        width: 355px;
+        height: 350px;
+        background: #FFFFFF;
+        filter: blur(50px);
+        border-radius: 219px;
+        transform: rotate(-0.02deg) translateX(-50%);
+    }
+}
+
+.hamburger {
+    display: none;
+    position: fixed;
+    z-index: 30;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 0.833333px solid #FBF2EA;
+    border-radius: 33.3333px;
+    padding: 14.25px 11px;
+    transition: 0.6s all;
+    .spans {
+        display: flex;
+        height: 11.5px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    span {
+        transition: 0.6s all;
+        display: block;
+        width: 18px;
+        height: 1.5px;
+        border-radius: 0.75px;
+        background-color: #1476FF;
+    }
 }
 
 .dropdown {
@@ -92,7 +144,7 @@
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         padding: 20px;
-        z-index: 2;
+        z-index: 10;
         max-height: 215px;
         overflow: hidden auto;
         transition: 0.3s all;
@@ -155,4 +207,20 @@
             color: #1476FF;
         }
     }
+}
+
+.expanded {
+    span {
+        &:first-child {
+            transform: translateY(4px) rotate(45deg);
+            
+        }
+        &:nth-child(2) {
+            display: none;
+        }
+        &:last-child {
+            transform: translateY(-5px) rotate(-45deg);
+        }
+    }
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
 }

@@ -46,6 +46,25 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+    <div class="hamburger">
+        <div class="spans">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="menu-mobile">
+        <div class="menu-mobile__wrapper">
+            <a href="catalog.html" class="menu-mobile-link">Каталог авто</a>
+            <div class="menu-mobile__divider"></div>
+            <a href="#team" class="menu-mobile-link">Детейлинг центр</a>
+            <div class="menu-mobile__divider"></div>
+            <a href="#contacts" class="menu-mobile-link">Контакты</a>
+        </div>
+    </div>
     <header>
         <nav>
             <div class="menu" id="up">
@@ -131,12 +150,13 @@
             <div class="language__choice language__selected_ru">RU</div>
         </div>
         <div class="container">
+            <div class="promo__circle"></div>
             <div class="promo__wrapper">
-                <div class="promo__header">
-                    <img src="img/home//promo/logo_promo.svg" alt="tim-motors" class="promo__logo">
+                <div class="promo__img">
+                    <img src="img/home/promo/logo_promo.svg" alt="tim-motors" class="promo__logo">
                 </div>
                 <div class="promo__divider"></div>
-                <h1 class="promo__subheader">
+                <h1 class="promo__header">
                     Продажа и доставка автомобилей<br>
                     из Дубая и Европы
                 </h1>
@@ -165,6 +185,7 @@
                     </div>
                 </div>
             </div>
+            <div class="promo__search__divider"></div>
             <div class="promo__search__item">
                 <div class="promo__search__dropdown">
                     <div class="promo__search__category selected_dropdown">Модель</div>
@@ -217,6 +238,7 @@
                     </div>
                 </div>
             </div>
+            <div class="promo__search__divider"></div>
             <div class="promo__search__item">
                 <div class="promo__search__dropdown">
                     <div class="promo__search__category selected_dropdown">Год</div>
@@ -226,6 +248,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="promo__search__btn">
                 Поиск
             </div>
@@ -529,7 +552,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" id="contacts">
         <div class="container">
             <div class="footer__wrapper">
                 <div class="footer__contacts">

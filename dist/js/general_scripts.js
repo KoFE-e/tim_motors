@@ -42,3 +42,20 @@ $(document).ready(function(){
         return false;
     });
 });
+
+const hamburger = document.querySelector('.hamburger'),
+        mobilemenu = document.querySelector('.menu-mobile'),
+        overlay = document.querySelector('.overlay');
+
+hamburger.addEventListener('click', () => {
+    if(getComputedStyle(mobilemenu).display == 'none') {
+        fadeIn(mobilemenu, 600);
+        fadeIn(overlay, 600);
+        hamburger.classList.add('expanded');
+    }
+    else {
+        fadeOut(mobilemenu, 600);
+        fadeOut(overlay, 600);
+        hamburger.classList.remove('expanded');
+    }
+})
