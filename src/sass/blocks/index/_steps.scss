@@ -1,6 +1,7 @@
 .steps {
     padding-top: 93px;
     background-color: #F1F5F9;
+    position: relative;
     &__subheader {
         font-weight: 600;
         font-size: 16px;
@@ -14,6 +15,7 @@
         display: grid;
         grid-template-columns: repeat(2, 313px);
         justify-content: center;
+        justify-items: center;
         column-gap: 28px;
         &_3 {
             grid-template-columns: repeat(3, 313px);
@@ -44,7 +46,8 @@
             border-radius: 24px;
         }
         &__descr {
-            min-height: 150px;
+            max-width: 300px;
+            min-height: 140px;
             margin-top: 66px;
             display: flex;
             flex-direction: column;

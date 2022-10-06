@@ -261,7 +261,7 @@
                 font-size: 14px;
             }
             &__descr {
-                min-height: 130px;
+                min-height: 110px;
             }
             &:nth-child(1), &:nth-child(2) {
                 &:before {
@@ -747,6 +747,9 @@
 }
 
 @media (max-width: 575.98px) {
+    .container {
+        max-width: 320px;
+    }
     .menu, .language {
         display: none;
     }
@@ -818,6 +821,153 @@
         &__item {
             font-weight: 400;
             font-size: 12px;
+        }
+    }
+    .advantages {
+        padding: 85px 0 57px 0;
+        &__wrapper {
+            grid-template-rows: none;
+        }
+        &__img, &__divider {
+            display: none;
+        }
+        &__list {
+            display: flex;
+            flex-direction: column;
+        }
+        &__header {
+            font-weight: 800;
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+        &__item {
+            grid-template-columns: none;
+            grid-template-rows: 45px minmax(40px, auto);
+            row-gap: 21px;
+            justify-items: center;
+            margin-top: 34px;
+            &:first-child {
+                margin-top: 25px;
+            }
+        }
+        &__descr {
+            font-size: 12px;
+            text-align: center;
+            font-weight: 400;
+            span {
+                font-weight: 700;   
+            }
+        }
+    }
+    .steps {
+        background: url("../img/home/steps/bg_steps_mobile.png") center (center / 100% 100%) no-repeat;
+        background-color: #F1F5F9;
+        padding-top: 42px;
+        padding-bottom: 50px;
+        &__subheader {
+            font-weight: 300;
+            font-size: 9px;
+            color: #D2D2D2;
+        }
+        &__header {
+            margin: 0 auto;
+            max-width: 145px;
+            font-size: 12px;
+            color: #FFFFFF;
+            span {
+                color: #FFFFFF;
+            }
+        }
+        &__wrapper, &__wrapper_3 {
+            grid-template-columns: 300px;
+            grid-template-rows: minmax(60px, auto);
+            grid-auto-rows: minmax(60px, auto);
+            column-gap: 0;
+            row-gap: 20px;
+            padding-top: 35px;
+        }
+        &__wrapper_3 {
+            padding-top: 20px;
+            .steps__item {
+                &:last-child {
+                    grid-column: 1;
+                }
+            }
+        }
+        &__item {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 55px 220px;
+            column-gap: 18px;
+            &__img {
+                width: 55px;
+                height: 55px;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+                border-radius: 14.3276px;
+                img {
+                    max-width: 21px;
+                    max-height: 21px;
+                }
+            }
+            &__descr {
+                display: block;
+                margin-top: 0;
+                min-height: auto;
+            }
+            &__subheader, &__text {
+                text-align: left;
+            }
+            &__subheader {
+                margin-bottom: 3px;
+                font-weight: 700;
+                font-size: 12.5367px;
+                color: #FFFFFF;
+            }
+            &__text {
+                font-weight: 600;
+                font-size: 9.55176px;
+                color: #DBDBDB;
+                br {
+                    display: none;
+                }
+            }
+            &:nth-child(1), &:nth-child(2) {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+        &__help {
+            width: 280px;
+            min-height: 93px;
+            margin-top: 30px;
+            box-shadow: none;
+            &__subheader {
+                font-size: 12.5367px;
+                color: #3563E9;
+            }
+            &__text {
+                font-weight: 600;
+                font-size: 9.55176px;
+            }
+            &__info {
+                width: 100%;
+                background: #F1F5F9;
+                box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+        }
+    }
+    .suggestions {
+        padding-top: 47px;
+        &__header {
+            font-size: 12px;
+            line-height: 155.9%;
+        }
+        &__wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 5px;
         }
     }
 }
