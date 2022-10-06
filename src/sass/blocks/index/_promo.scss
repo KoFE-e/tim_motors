@@ -184,19 +184,3 @@
         }
     }
 }
-
-.expanded {
-    span {
-        &:first-child {
-            transform: translateY(4px) rotate(45deg);
-            
-        }
-        &:nth-child(2) {
-            display: none;
-        }
-        &:last-child {
-            transform: translateY(-5px) rotate(-45deg);
-        }
-    }
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
-}
