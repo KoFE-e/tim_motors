@@ -973,7 +973,6 @@
             column-gap: 0;
         }
         &__card {
-            background: #5CAFFC;
             width: 100%;
             height: 103px;
             padding: 20px;
@@ -982,6 +981,7 @@
                 font-size: 16px;
                 text-transform: uppercase;
                 color: #1476FF;
+                font-weight: 800;
             }
             &__descr {
                 margin-top: 5px;
@@ -997,6 +997,12 @@
                 height: 22px;
                 background: $main-color;
                 border-radius: 1.34465px;
+            }
+            &:first-child {
+                background: url('../img/home/auto/new_mobile_bg.png') bottom right no-repeat;
+            }
+            &:last-child {
+                background: url('../img/home/auto/bu_mobile_bg.png') bottom left no-repeat;
             }
         }
     }
@@ -1141,14 +1147,17 @@
         &__item {
             border-radius: 5px;
             width: 300px;
-            min-height: 28px;
+            max-height: 28px;
             padding: 5px 8px;
+            margin-bottom: 10px;
+            box-shadow: 1.7713px 1.7713px 3.5426px #C9D9E8, -1.7713px -1.7713px 3.5426px #FFFFFF;
         }
         &__name {
             margin-left: 14px;
             font-size: 12px;
         }
         &__icon {
+            box-shadow: 1.7713px 1.7713px 3.5426px #C9D9E8, -1.7713px -1.7713px 3.5426px #FFFFFF;
             width: 17px;
             height: 17px;
             span {
@@ -1161,13 +1170,16 @@
             font-size: 12px;
             padding: 0 8px 15px 8px;
         }
+        &__list {
+            margin-top: 22px;
+        }
     }
     .pageup {
         bottom: 20px;
         right: 20px;
     }
     .footer {
-        padding: 50px 30px;
+        padding: 37px 30px;
         &__wrapper {
             display: flex;
             align-items: center;
@@ -1175,8 +1187,9 @@
         }
         &__logo {
             width: 150px;
-            height: 100px;
+            height: 30px;
             transform: scale(1);
+            margin-top: 24px;
             &__img {
                 object-fit: cover;
                 position: relative;
@@ -1185,8 +1198,14 @@
             }
         }
         &__contacts {
+            text-align: center;
+            margin-top: 15px;
             .footer__subheader {
                 display: none;
+            }
+            &__tel, &__mail {
+                margin-bottom: 6px;
+                font-size: 12px;
             }
         }
         div {
@@ -1198,6 +1217,20 @@
             }
             &:last-child {
                 order: 3;
+            }
+        }
+        &__subheader {
+            font-size: 12px;
+        }
+        &__social {
+            &__links {
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                width: 80px;
+            }
+            &__link {
+                margin-right: 0;
             }
         }
     }

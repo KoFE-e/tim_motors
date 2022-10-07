@@ -45,7 +45,8 @@ $(document).ready(function(){
 
 const hamburger = document.querySelector('.hamburger'),
         mobilemenu = document.querySelector('.menu-mobile'),
-        overlay = document.querySelector('.overlay');
+        overlay = document.querySelector('.overlay'),
+        menulinks = document.querySelectorAll('.menu-mobile-link');
 
 hamburger.addEventListener('click', () => {
     if(getComputedStyle(mobilemenu).display == 'none') {
@@ -58,4 +59,13 @@ hamburger.addEventListener('click', () => {
         fadeOut(overlay, 600);
         hamburger.classList.remove('expanded');
     }
-})
+});
+
+menulinks.forEach(item => {
+    item.addEventListener('click', () => {
+        fadeOut(mobilemenu, 600);
+        fadeOut(overlay, 600);
+        hamburger.classList.remove('expanded');
+    });
+});
+
