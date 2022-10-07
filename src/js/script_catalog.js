@@ -14,19 +14,15 @@ noUiSlider.create(costSlider, {
     }
 });
 
-var yearSlider = document.getElementById('year-range');
 
-noUiSlider.create(yearSlider, {
-    start: [2018, 2023],
-    connect: true,
-    step: 1,
-    range: {
-        'min': [2018],
-        'max': [2023]
-    }
-});
+const url = new URL(location.href);
+var searchParams = new URLSearchParams(url.search);
 
-//create_arrays_for_range_sliders
+var beginCategory = searchParams.get('data-category'),
+      beginBrand = searchParams.get('data-brand'),
+      beginYear = parseInt(searchParams.get('min-year'));
+
+//create_arrays_for_filters
 
 var costValues = [
     document.getElementById('cost-range-min'),
@@ -47,6 +43,49 @@ var yearRange = [
     parseInt(yearValues[0].innerHTML),
     parseInt(yearValues[1].innerHTML)
 ];
+
+const allCategories = document.querySelectorAll('.catalog__categories-btn');
+const allBrands = document.querySelectorAll('.catalog__models-item');
+var selectedCategories = [];
+var selectedBrands = [];
+
+//search_values
+
+if (!isNaN(beginYear)) {
+    yearRange[0] = beginYear;
+}
+
+if (beginCategory !== null) {
+    selectedCategories.push(beginCategory);
+    allCategories.forEach(item => {
+        if (item.getAttribute('data-category') == beginCategory) {
+            item.classList.add('selected');
+        }
+    });
+}
+
+if (beginBrand !== null) {
+    selectedBrands.push(beginBrand);
+    allBrands.forEach(item => {
+        if (item.getAttribute('data-brand') == beginBrand) {
+            item.classList.add('selected');
+        }
+    });
+}
+
+filter(costRange, yearRange, selectedCategories, selectedBrands);
+
+var yearSlider = document.getElementById('year-range');
+
+noUiSlider.create(yearSlider, {
+    start: [yearRange[0], 2023],
+    connect: true,
+    step: 1,
+    range: {
+        'min': [2005],
+        'max': [2023]
+    }
+});
 
 //filter
 
@@ -132,11 +171,6 @@ yearSlider.noUiSlider.on('set', function (values, handle) {
     filter(costRange, yearRange, selectedCategories, selectedBrands);
 });
 
-
-const allCategories = document.querySelectorAll('.catalog__categories-btn');
-const allBrands = document.querySelectorAll('.catalog__models-item');
-var selectedCategories = [];
-var selectedBrands = [];
 
 //adding_selected_classes
 

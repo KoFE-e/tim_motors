@@ -43,6 +43,8 @@ $(document).ready(function(){
     });
 });
 
+//mobile_menu
+
 const hamburger = document.querySelector('.hamburger'),
         mobilemenu = document.querySelector('.menu-mobile'),
         overlay = document.querySelector('.overlay'),

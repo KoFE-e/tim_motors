@@ -47,7 +47,7 @@
             width: 1000px;
             height: 100px;
             padding-left: 50px;
-            &__category {
+            &__select {
                 &:before {
                     right: -20px;
                 }
@@ -369,7 +369,7 @@
             grid-template-columns: 150px 80px 40px 150px;
             padding-left: 30px;
             width: 650px;
-            &__category {
+            &__select {
                 font-size: 16px;
             }
             &__btn {
@@ -599,7 +599,7 @@
             &__divider {
                 display: block;
             }
-            &__category {
+            &__select {
                 &:hover {
                     color: #000;
                 }
@@ -784,7 +784,7 @@
             padding-top: 10px;
             height: 145px;
             bottom: -35px;
-            &__category {
+            &__select {
                 font-weight: 400;
                 font-size: 12px;
             }
@@ -1086,9 +1086,9 @@
     }
     .news {
         padding-bottom: 0;
-        background-position: right bottom 20%;
+        background-position: right bottom;
         &__inner {
-            width: 270px;
+            width: 250px;
         }
         &__item {
             padding: 0;
@@ -1174,9 +1174,15 @@
             margin-top: 22px;
         }
     }
-    .pageup {
+    .pageup, .phone {
         bottom: 20px;
         right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    .phone {
+        left: 20px;
+        right: auto;
     }
     .footer {
         padding: 37px 30px;

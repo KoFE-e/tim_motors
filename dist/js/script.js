@@ -3,7 +3,7 @@
 const dropdowns = document.querySelectorAll('.promo__search__item');
 
 dropdowns.forEach(dropdown => {
-    const select = dropdown.querySelector('.promo__search__category');
+    const select = dropdown.querySelector('.promo__search__select');
     const menu = dropdown.querySelector('.dropdown__list');
     const options = dropdown.querySelectorAll('.dropdown__item');
     const selected = dropdown.querySelector('.selected_dropdown');
@@ -83,4 +83,45 @@ $(document).ready(function(){
             }
         }]
     });
+});
+
+var searchParams = new URLSearchParams('?');
+
+//search
+const dropdownCategories = document.querySelectorAll('.dropdown__category'),
+      dropdownBrands = document.querySelectorAll('.dropdown__brand'),
+      dropdownYears = document.querySelectorAll('.dropdown__year');
+
+dropdownCategories.forEach(item => {
+    item.addEventListener('click', () => {
+        searchParams.delete('data-category');
+        if(!searchParams.has('data-category')) {
+            searchParams.append('data-category', item.getAttribute('data-category'));
+        }
+    });
+});
+
+dropdownBrands.forEach(item => {
+    item.addEventListener('click', () => {
+        searchParams.delete('data-brand');
+        if(!searchParams.has('data-brand')) {
+            searchParams.append('data-brand', item.getAttribute('data-brand'));
+        }
+    });
+});
+
+dropdownYears.forEach(item => {
+    item.addEventListener('click', () => {
+        searchParams.delete('min-year');
+        if(!searchParams.has('min-year')) {
+            searchParams.append('min-year', parseInt(item.innerHTML));
+        }
+    });
+});
+
+
+const searchBtn = document.querySelector('.promo__search__btn');
+
+searchBtn.addEventListener('click', () => {
+    window.location.href = '/catalog.html' + '?' + searchParams;
 });
