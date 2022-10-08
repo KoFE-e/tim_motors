@@ -66,10 +66,10 @@
         }
     }
     &__items {
+        padding: 70px 0;
         background-color: #F1F5F9;
         &-header {
             text-align: center;
-            margin-top: 70px;
             font-weight: 800;
             font-size: 33px;
             span {
@@ -198,7 +198,6 @@
             height: 24px;
             font-weight: 600;
             font-size: 16px;
-            line-height: 165.9%;
             border: 1px solid #000000;
             border-radius: 4px;
         }
