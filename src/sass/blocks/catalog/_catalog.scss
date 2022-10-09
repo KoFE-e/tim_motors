@@ -124,7 +124,7 @@
     &__list {
         margin-top: 85px;
         display: grid;
-        grid-template-columns: repeat(2, minmax(624px, auto));
+        grid-template-columns: repeat(2, 624px);
         grid-template-rows: repeat(2, minmax(642px, auto));
         grid-auto-rows: minmax(642px, auto);
         justify-content: center;

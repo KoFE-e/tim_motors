@@ -14,6 +14,18 @@ noUiSlider.create(costSlider, {
     }
 });
 
+var mobileCostSlider = document.getElementById('mobile-cost-range');
+
+noUiSlider.create(mobileCostSlider, {
+    start: [0, 1000000],
+    connect: true,
+    step: 1,
+    range: {
+        'min': [0],
+        'max': [1000000]
+    }
+});
+
 
 const url = new URL(location.href);
 var searchParams = new URLSearchParams(url.search);
@@ -34,6 +46,16 @@ var costRange = [
     parseInt(costValues[1].innerHTML.slice(4).replace(/\s+/g, ''))
 ];
 
+var mobileCostValues = [
+    document.getElementById('mobile-cost-range-min'),
+    document.getElementById('mobile-cost-range-max')
+];
+
+var mobileCostRange = [
+    parseInt(costValues[0].innerHTML.slice(4).replace(/\s+/g, '')),
+    parseInt(costValues[1].innerHTML.slice(4).replace(/\s+/g, ''))
+];
+
 var yearValues = [
     document.getElementById('year-range-min'),
     document.getElementById('year-range-max')
@@ -42,6 +64,16 @@ var yearValues = [
 var yearRange = [
     parseInt(yearValues[0].innerHTML),
     parseInt(yearValues[1].innerHTML)
+];
+
+var mobileYearValues = [
+    document.getElementById('mobile-year-range-min'),
+    document.getElementById('mobile-year-range-max')
+];
+
+var mobileYearRange = [
+    parseInt(mobileYearValues[0].innerHTML),
+    parseInt(mobileYearValues[1].innerHTML)
 ];
 
 const allCategories = document.querySelectorAll('.catalog__categories-btn');
@@ -53,6 +85,7 @@ var selectedBrands = [];
 
 if (!isNaN(beginYear)) {
     yearRange[0] = beginYear;
+    mobileYearRange[0] = beginYear;
 }
 
 if (beginCategory !== null) {
@@ -79,6 +112,18 @@ var yearSlider = document.getElementById('year-range');
 
 noUiSlider.create(yearSlider, {
     start: [yearRange[0], 2023],
+    connect: true,
+    step: 1,
+    range: {
+        'min': [2005],
+        'max': [2023]
+    }
+});
+
+var mobileYearSlider = document.getElementById('mobile-year-range');
+
+noUiSlider.create(mobileYearSlider, {
+    start: [mobileYearRange[0], 2023],
     connect: true,
     step: 1,
     range: {
@@ -148,6 +193,15 @@ costSlider.noUiSlider.on('update', function (values, handle) {
     }
 });
 
+mobileCostSlider.noUiSlider.on('update', function (values, handle) {
+    if (handle == 0) {
+        mobileCostValues[handle].innerHTML = 'От $' + parseInt(values[handle]).toLocaleString();
+    }
+    else {
+        mobileCostValues[handle].innerHTML = 'До $' + parseInt(values[handle]).toLocaleString();
+    }
+});
+
 //refresh_years_range
 
 yearSlider.noUiSlider.on('update', function (values, handle) {
@@ -159,6 +213,15 @@ yearSlider.noUiSlider.on('update', function (values, handle) {
     }
 });
 
+mobileYearSlider.noUiSlider.on('update', function (values, handle) {
+    if (handle == 0) {
+        mobileYearValues[handle].innerHTML = parseInt(values[handle]);
+    }
+    else {
+        mobileYearValues[handle].innerHTML = parseInt(values[handle]);
+    }
+});
+
 //updating_sliders
 
 costSlider.noUiSlider.on('set', function (values, handle) {
@@ -166,9 +229,19 @@ costSlider.noUiSlider.on('set', function (values, handle) {
     filter(costRange, yearRange, selectedCategories, selectedBrands);
 });
 
+mobileCostSlider.noUiSlider.on('set', function (values, handle) {
+    mobileCostRange[handle] = parseInt(values[handle]);
+    filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+});
+
 yearSlider.noUiSlider.on('set', function (values, handle) {
     yearRange[handle] = parseInt(values[handle]);
     filter(costRange, yearRange, selectedCategories, selectedBrands);
+});
+
+mobileYearSlider.noUiSlider.on('set', function (values, handle) {
+    mobileYearRange[handle] = parseInt(values[handle]);
+    filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
 });
 
 
@@ -193,6 +266,7 @@ allCategories.forEach(item => {
             item.classList.remove('selected');
         }
         filter(costRange, yearRange, selectedCategories, selectedBrands);
+        filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
     });
 });
 
@@ -214,7 +288,7 @@ allBrands.forEach(item => {
             console.log(selectedBrands);
             item.classList.remove('selected');
         }
-        filter(costRange, yearRange, selectedCategories, selectedBrands);
+        filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
     });
 });
 
