@@ -56,13 +56,6 @@
             &:hover {
                 color: $main-color;
             }
-            &_selected {
-                background-color: $main-color;
-                color: #fff;
-                &:hover {
-                    color: #fff;
-                }
-            }
         }
     }
     &__items {
@@ -75,6 +68,13 @@
             span {
                 color: $main-color;
             }
+        }
+        &-mobileheader {
+            display: none;
+            color: #BCBCBC;
+            font-weight: 400;
+            font-size: 12px;
+            text-align: center;
         }
     }
     &__categories {
@@ -297,21 +297,6 @@
     }
 }
 
-.mixitup {
-    &-control {
-        &-active {
-            color: #fff;
-            background-color: $main-color;
-            svg path{
-                fill: #fff;
-            }
-            &:hover {
-                color: #fff;
-            }
-        }
-    }
-}
-
 .selected {
     color: #fff;
     background-color: $main-color;
@@ -321,4 +306,8 @@
     &:hover {
         color: #fff;
     }
+}
+
+.promo_catalog {
+    display: none;
 }

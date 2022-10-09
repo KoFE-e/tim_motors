@@ -47,7 +47,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('htaccess', function () {
-    return gulp.src("src/.htaccess")
+    return gulp.src("src/.htaccess", {"allowEmpty": true})
         .pipe(gulp.dest("dist/"))
         .pipe(browserSync.stream());;
 });

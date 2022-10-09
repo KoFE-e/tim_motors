@@ -145,6 +145,128 @@
         </nav>
     </header>
 
+    <section class="promo promo_catalog">
+        <div class="language">
+            <div class="language__choice language_notselected">EN</div>
+            <div class="language__choice language__selected_ru">RU</div>
+        </div>
+        <div class="container">
+            <div class="promo__circle"></div>
+            <div class="promo__wrapper">
+                <div class="promo__img">
+                    <img src="icons/catalog/promo/logo_mobile.svg" alt="tim-motors" class="promo__logo">
+                </div>
+                <div class="promo__divider"></div>
+                <div class="promo__header">
+                    Выберите тип транспорта
+                </div>
+            </div>
+        </div>
+        <div class="promo__search">
+            <div class="promo__search__item">
+                <div class="promo__search__dropdown">
+                    <div class="promo__search__select selected_dropdown">Тип транспорта</div>
+                    <div class="catalog__categories dropdown__list">
+                        <div class="catalog__categories-btn dropdown__item dropdown__category" data-category="elite">
+                            Элитные
+                        </div>
+                        <div class="catalog__categories-btn dropdown__item dropdown__category" data-category="bus">
+                            Микроавтобусы
+                        </div>
+                        <div class="catalog__categories-btn dropdown__item dropdown__category" data-category="light">
+                            Легковые
+                        </div>
+                        <div class="catalog__categories-btn dropdown__item dropdown__category" data-category="spec">
+                            Спец.техника
+                        </div>
+                        <div class="catalog__categories-btn dropdown__item dropdown__category" data-category="moto">
+                            Мотоциклы
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promo__search__divider"></div>
+            <div class="promo__search__item">
+                <div class="promo__search__dropdown">
+                    <div class="promo__search__select selected_dropdown">Модель</div>
+                    <div class="catalog__models dropdown__list">
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="audi">
+                            Audi
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="bmw">
+                            BMW
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="cadillac">
+                            Cadillac
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="dodge">
+                            Dodge
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="ford">
+                            Ford
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="hyundai">
+                            Hyundai
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="infinity">
+                            Infinity
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="kia">
+                            KIA
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="land_rover">
+                            Land Rover
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="lexus">
+                            Lexus
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="nissan">
+                            Nissan
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="mercedes">
+                            Mercedes
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="mitsubisi">
+                            Mitsubisi
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="porsche">
+                            Porsche
+                        </div>
+                        <div class="catalog__models-item dropdown__item dropdown__brand" data-brand="toyota">
+                            Toyota
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promo__search__divider"></div>
+            <div class="promo__search__item">
+                <div class="promo__search__dropdown">
+                    <div class="promo__search__select selected_dropdown">Год</div>
+                    <div class="dropdown__list dropdown__slider">
+                        <div class="filter-slider dropdown__item" id="year-range"></div>
+                        <div class="catalog__filter__ranges">
+                            <div class="catalog__filter-range" id="year-range-min">2005</div>
+                            <div class="catalog__filter-range" id="year-range-max">2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promo__search__divider"></div>
+            <div class="promo__search__item">
+                <div class="promo__search__dropdown">
+                    <div class="promo__search__select selected_dropdown">Диапазон цен</div>
+                    <div class="dropdown__list dropdown__slider">
+                        <div class="filter-slider dropdown__item" id="cost-range"></div>
+                        <div class="catalog__filter__ranges">
+                            <div class="catalog__filter-range" id="cost-range-min">От $0</div>
+                            <div class="catalog__filter-range" id="cost-range-max">До $1 000 000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="catalog">
         <div class="container_fluid">
             <div class="catalog__wrapper">
@@ -190,6 +312,9 @@
                     <h1 class="catalog__items-header">
                         Выберите <span>тип транспорта</span>
                     </h1>
+                    <div class="catalog__items-mobileheader">
+                        Результаты поиска
+                    </div>
                     <div class="catalog__categories">
                         <div class="catalog__categories__item">
                             <button type="button" class="catalog__categories-btn" data-category="elite">
