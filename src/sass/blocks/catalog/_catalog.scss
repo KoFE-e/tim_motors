@@ -273,6 +273,78 @@
                 margin-right: 20px;
             }
         }
+        &__info {
+            display: none;
+            position: fixed;
+            padding: 60px 74px;
+            width: 1266px;
+            min-height: 642px;
+            background: #F1F5F9;
+            box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
+            border-radius: 24px;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &-images {
+                display: grid;
+                grid-template-columns: repeat(3, 355px);
+                grid-template-rows: 244px;
+                column-gap: 28px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &-img {
+                cursor: pointer;
+            }
+            &-descr {
+                margin-top: 70px;
+                display: grid;
+                grid-template-columns: repeat(3, 355px);
+                grid-template-rows: minmax(218px, auto);
+                column-gap: 28px;
+            }
+            &-text {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 165.9%;
+                color: #000000;
+            }
+            &-column {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            &-close {
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                background-color: #f1f5f9;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: 0;
+                right: -80px;
+                box-shadow: 4px 4px 8px #c9d9e8, -4px -4px 8px #fff;
+                cursor: pointer;
+                .close {
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    background-color: $main-color;
+                    &:first-child {
+                        transform: rotate(45deg);
+                    }
+                    &:last-child {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
         &__btn {
             margin-top: 23px;
             display: block;

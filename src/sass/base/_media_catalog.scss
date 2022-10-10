@@ -423,6 +423,16 @@
                 grid-template-rows: repeat(2, 35px);
                 row-gap: 20px;
             }
+            &-more {
+                &:hover {
+                    transform: scale(1);
+                }
+            }
+            &-photo {
+                &:hover {
+                    transform: scale(1);
+                }
+            }
             &-price {
                 &-cost {
                     font-size: 18px;
@@ -431,8 +441,7 @@
                     &:before {
                         height: 1px;
                         width: 100%;
-                        background-color: #000;
-                        opacity: 0.4;
+                        background-color: #d7d7d7;
                         right: auto;
                         top: auto;
                         bottom: -10px;
@@ -440,7 +449,12 @@
                 }
             }
             &-divider {
-                margin-top: 15px;
+                margin-top: 10px;
+            }
+            &-btn {
+                &:hover {
+                    transform: scale(1);
+                }
             }
         }
     }
