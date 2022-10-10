@@ -330,52 +330,53 @@ const card_img = document.querySelectorAll('.catalog__card-img');
 
 more_btns.forEach((item, index) => {
     item.addEventListener('click', () => {
-        fadeIn(card_info[index], 600);
-        fadeIn(overlay, 600);
+        fadeIn(card_info[index], 300);
+        fadeIn(overlay, 300);
     });
 });
 
 card_img.forEach((item, index) => {
     item.addEventListener('click', () => {
-        fadeIn(card_info[index], 600);
-        fadeIn(overlay, 600);
+        fadeIn(card_info[index], 300);
+        fadeIn(overlay, 300);
     });
 });
 
 close_btns.forEach((item, index) => {
     item.addEventListener('click', () => {
-        fadeOut(card_info[index], 600);
-        fadeOut(overlay, 600);
+        fadeOut(card_info[index], 300);
+        fadeOut(overlay, 300);
     });
 });
 
 overlay.addEventListener('click', () => {
     card_info.forEach(item => {
         if (getComputedStyle(item).display != 'none') {
-            fadeOut(item, 600);
-            fadeOut(overlay, 600);
+            fadeOut(item, 300);
+            fadeOut(overlay, 300);
         };
     });
 });
 
 $(document).ready(function() {
-	$('.catalog__card__info-images').magnificPopup({
-		delegate: 'img',
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-			titleSrc: function(item) {
-				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
-			}
-		}
-	});
+    card_info.forEach(item => {
+        $(item).magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Загрузка изображения #%curr%...',
+            removalDelay: 300,
+            mainClass: 'mfp-fade',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
+                preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+                tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.',
+            }
+        });
+    });
 });
 
 

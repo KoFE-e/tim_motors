@@ -288,7 +288,7 @@
             transform: translate(-50%, -50%);
             &-images {
                 display: grid;
-                grid-template-columns: repeat(3, 355px);
+                grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: 244px;
                 column-gap: 28px;
                 img {
@@ -298,12 +298,13 @@
                 }
             }
             &-img {
+                display: block;
                 cursor: pointer;
             }
             &-descr {
                 margin-top: 70px;
                 display: grid;
-                grid-template-columns: repeat(3, 355px);
+                grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: minmax(218px, auto);
                 column-gap: 28px;
             }
@@ -382,4 +383,16 @@
 
 .promo_catalog {
     display: none;
+}
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder {
+    cursor: auto;
+}
+
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+    cursor: pointer;
+    font-size: 60px;
+    max-width: 40px;
+    top: 40px;
+    right: -50px;
 }
