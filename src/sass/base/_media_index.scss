@@ -201,7 +201,7 @@
     }
     .footer {
         min-height: auto;
-        padding: 100px 60px;
+        padding: 100px;
         &__subheader {
             margin-bottom: 20px;
             font-size: 26px;
@@ -339,7 +339,8 @@
     }
     .footer {
         &__subheader {
-            font-size: 22px;
+            font-size: 20px;
+            margin-bottom: 15px;
         }
         &__logo {
             &__img {
@@ -348,11 +349,21 @@
         }
         &__social {
             &__link {
-                margin-right: 20px;
-                img {
-                    transform: scale(0.9);
+                width: 80px;
+                height: 40px;
+                svg {
+                    width: 25px;
+                    height: 25px;
                 }
             }
+        }
+        &__contacts {
+            &__tel, &__mail {
+                font-size: 14px;
+            }
+        }
+        &__design {
+            font-size: 14px;
         }
     }
 }
@@ -513,15 +524,31 @@
         }
     }
     .footer {
-        padding: 70px 40px;
+        padding: 70px 55px;
         &__subheader {
             margin-bottom: 15px;
-            font-size: 18px;
+            font-size: 16px;
         }
         &__contacts {
             &__tel, &__mail {
                 margin-bottom: 10px;
+                font-size: 12px;
             }
+        }
+        &__social {
+            &__link {
+                width: 60px;
+                height: 35px;
+                border-radius: 15px;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+        &__design {
+            font-size: 12px;
+            line-height: 27px;
         }
     }
 }
@@ -561,6 +588,13 @@
                         .mail_icon {
                             fill: #FFFFFF;
                             stroke: $main-color;
+                        }
+                    }
+                }
+                &:first-child {
+                    &:hover {
+                        svg path {
+                            fill: #3FD11B;
                         }
                     }
                 }
@@ -732,14 +766,34 @@
         padding: 70px 30px;
         &__subheader {
             margin-bottom: 10px;
-            font-size: 17px;
         }
         &__social {
             &__link {
-                img {
-                    transform: scale(0.8);
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                &:hover {
+                    background-color: #f1f5f9;
+                }
+                &:first-child {
                     &:hover {
-                        transform: scale(0.8);
+                        svg path {
+                            fill: #F40000;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    &:hover {
+                        svg path {
+                            fill: url(#a);
+                        }
+                    }
+                }
+                &:last-child {
+                    &:hover {
+                        svg path {
+                            fill: #3FD11B;
+                        }
                     }
                 }
             }
@@ -750,6 +804,9 @@
                     color: #000;
                 }
             }
+        }
+        &__design {
+            line-height: 22px;
         }
     }
 }
@@ -1254,7 +1311,7 @@
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
-                width: 80px;
+                width: 140px;
             }
             &__link {
                 margin-right: 0;

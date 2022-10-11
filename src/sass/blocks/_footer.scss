@@ -14,17 +14,18 @@
     &__subheader {
         font-weight: 800;
         font-size: 33px;
-        margin-bottom: 26px;
+        margin-bottom: 20px;
     }
     &__contacts {
         &__tel {
             font-weight: 700;
-            font-size: 14px;
+            font-size: 18px;
             margin-bottom: 20px;
         }
         &__mail {
             font-weight: 700;
-            font-size: 14px;
+            font-size: 18px;
+            margin-bottom: 20px;
         }
         a {
             transition: 0.3s all;
@@ -34,14 +35,31 @@
         }
     }
     &__social {
+        &__links {
+            display: flex;
+        }
         &__link {
-            margin-right: 30px;
-            img {
-                transition: 0.3s all;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90px;
+            height: 50px;       
+            background: #F1F5F9;
+            border-radius: 23px;
+            margin-right: 5px;
+            transition: 0.3s all;
+            svg {
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                path {
+                    transition: 0.3s all;
+                }
             }
             &:hover {
-                img {
-                    transform: scale(1.1);
+                background-color: $main-color;
+                svg path{
+                    fill: #fff;
                 }
             }
         }
@@ -62,5 +80,19 @@
     }
     &_news {
         background-color: #F1F5F9;
+    }
+    &__design {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 37px;
+        color: #757575;
+        opacity: 0.89;
+        a {
+            color: #757575;
+            display: block;
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
