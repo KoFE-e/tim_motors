@@ -501,9 +501,10 @@
         }
         &__card {
             &-prices {
+                margin-top: 10px;
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(2, 35px);
-                row-gap: 20px;
+                row-gap: 10px;
             }
             &-more {
                 &:hover {
@@ -520,18 +521,24 @@
                     font-size: 18px;
                 }
                 &:first-child {
-                    &:before {
+                    &:before, &:after {
                         height: 1px;
                         width: 100%;
                         background-color: #d7d7d7;
                         right: auto;
                         top: auto;
-                        bottom: -10px;
+                        bottom: -5px;
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: -5px;
+                        bottom: auto;
                     }
                 }
             }
             &-divider {
-                margin-top: 10px;
+                margin-top: 5px;
             }
             &-btn {
                 &:hover {

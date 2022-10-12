@@ -25,6 +25,36 @@
             font-weight: 300;
             font-size: 16px;
             line-height: 165.9%;
+            span {
+                font-weight: 700;
+            }
+            &_quote {
+                margin: 40px 0;
+                position: relative;
+                padding-left: 40px;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    height: 5px;
+                    background-color: $main-color;
+                    border-radius: 30px;
+                    left: -25px;
+                    top: 50%;
+                    width: 56px;
+                    transform: rotate(90deg) translateY(-50%);
+                }
+            }
+        }
+        &__wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 55px;
+            .news-state__header {
+                max-width: 100%;
+            }
+            .news-state__img_full {
+                margin: 0;
+            }
         }
         &__subheader {
             font-weight: 700;
@@ -34,15 +64,16 @@
             margin-bottom: 30px;
         }
         &__photo {
-            max-width: 100%;
-            border-radius: 30px;
-            margin-top: 30px;
+            width: 100%;
+            max-height: 100%;
+            object-fit: cover;
         }
         &__img {
+            max-width: 100%;
+            border-radius: 30px;
             &_full {
-                width: 100%;
-                max-height: 100%;
-                object-fit: cover;
+                margin-top: 30px;
+                margin-bottom: 18px;
             }
         }
         &__links {
@@ -72,6 +103,37 @@
             &:hover {
                 text-decoration: none;
                 color: $main-color;
+            }
+        }
+        &__imgwrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-bottom: 18px;
+            .news-state__img_full {
+                margin-top: 0;
+                margin-bottom: 0;
+                grid-column: 1/3;
+            }
+        }
+        &__ref {
+            display: grid;
+            grid-template-columns: 565px auto;
+            column-gap: 100px;
+            margin-top: 60px;
+            margin-bottom: 27px;
+            &__card {
+                .catalog__card {
+                    padding-top: 1px;
+                    &-img {
+                        height: 300px;
+                    }
+                }
+            }
+            &__descr {
+                font-weight: 800;
+                font-size: 33px;
+                line-height: 165.9%;
             }
         }
     }

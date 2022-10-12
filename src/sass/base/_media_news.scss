@@ -15,6 +15,20 @@
     }
 }
 
+@media (max-width: 1439.98px) {
+    .news {
+        &-state {
+            &__ref {
+                grid-template-columns: 500px auto;
+                column-gap: 80px;
+                &__descr {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1139.98px) {
     .news {
         &-promo {
@@ -25,6 +39,9 @@
             }
         }
         &-state {
+            &__wrapper {
+                column-gap: 30px;
+            }
             &__header {
                 font-size: 24px;
                 max-width: 70%;
@@ -39,6 +56,18 @@
                 font-size: 22px;
                 min-height: 100px;
             }
+            &__ref {
+                grid-template-columns: 400px auto;
+                column-gap: 40px;
+                .catalog__card {
+                    &-img {
+                        height: 230px;
+                    }
+                }
+                &__descr {
+                    font-size: 22px;
+                }
+            }
         }
     }
 }
@@ -50,6 +79,9 @@
             padding-top: 40px;
         }
         &-state {
+            &__wrapper {
+                grid-template-columns: 1fr;
+            }
             &__links {
                 &__subheader {
                     margin-bottom: 40px;
@@ -57,6 +89,16 @@
             }
             &__link {
                 font-size: 20px;
+            }
+            &__ref {
+                grid-template-columns: 350px;
+                row-gap: 20px;
+                &__descr {
+                    order: 1;
+                }
+                &__card {
+                    order: 2;
+                }
             }
         }
     }
@@ -90,6 +132,11 @@
                 font-size: 16px;
                 min-height: 80px;
             }
+            &__ref {
+                .catalog__card-img {
+                    height: 200px;
+                }
+            }
         }
     }
     .footer {
@@ -107,18 +154,23 @@
     .news {
         &-promo {
             background-image: url('../img/news/promo_bg_mobile.jpg');
-            padding-left: 20px;
+            padding: 105px 10px 0 10px;
             min-height: 160px;
-            padding-top: 105px;
             &__header {
                 text-transform: uppercase;
                 font-size: 21px;
             }
         }
         &-state {
-            padding: 20px 20px 40px 20px;
+            padding: 20px 10px 40px 10px;
             &__header, &__subheader, &__paragraph {
                 font-size: 12px;
+            }
+            &__paragraph {
+                &_quote {
+                    padding-left: 25px;
+                    margin: 30px 0;
+                }
             }
             &__text {
                 margin-top: 20px;
@@ -127,7 +179,7 @@
                 margin-top: 30px;
                 margin-bottom: 20px;
             }
-            &__photo {
+            &__img {
                 margin-top: 10px;
                 border-radius: 16px;
             }
@@ -138,14 +190,34 @@
                     margin-bottom: 16px;
                 }
             }
+            &__imgwrapper {
+                grid-template-columns: 1fr;
+                row-gap: 10px;
+                .news-state__img {
+                    margin-top: 0;
+                }
+                .news-state__img_full {
+                    grid-column: 1;
+                }
+            }
             &__link {
                 min-height: 56px;
                 box-shadow: 1.76px 1.76px 3.52px #C9D9E8, -1.76px -1.76px 3.52px #FFFFFF;
                 border-radius: 5.28px;
                 margin-bottom: 5px;
-                padding: 0 16px;
+                padding: 8px 16px;
                 font-weight: 600;
                 font-size: 12px;
+            }
+            &__ref {
+                grid-template-columns: 1fr;
+                margin-top: 40px;
+                &__descr {
+                    font-size: 12px;
+                }
+                .catalog__card-img {
+                    height: 180px;
+                }
             }
         }
     }
