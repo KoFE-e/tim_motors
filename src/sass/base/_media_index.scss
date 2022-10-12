@@ -785,7 +785,15 @@
                 &:nth-child(2) {
                     &:hover {
                         svg path {
-                            fill: url(#a);
+                            &:nth-child(2) {
+                                fill: url(#a);
+                            }
+                            &:nth-child(4) {
+                                fill: url(#b);
+                            }
+                        }
+                        svg circle {
+                            fill: url(#c);
                         }
                     }
                 }

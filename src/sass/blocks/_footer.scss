@@ -58,7 +58,7 @@
             }
             &:hover {
                 background-color: $main-color;
-                svg path{
+                svg path, svg circle{
                     fill: #fff;
                 }
             }
@@ -80,6 +80,12 @@
     }
     &_news {
         background-color: #F1F5F9;
+        .footer__social__link {
+            background-color: #fff;
+            &:hover {
+                background-color: $main-color;
+            }
+        }
     }
     &__design {
         font-weight: 300;
