@@ -212,6 +212,13 @@
             grid-template-columns: repeat(2, 1fr);
             column-gap: 42px;
         }
+        &-call {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 165.9%;
+            margin-top: 15px;
+            color: #838383;
+        }
         &-price {
             display: flex;
             align-items: center;
@@ -256,7 +263,7 @@
             padding-left: 35px;
             font-weight: 600;
             font-size: 16px;
-            line-height: 160.4%;
+            line-height: 100%;
             color: #727272;
             &-ls {
                 span {
@@ -271,6 +278,11 @@
             }
             &-img {
                 margin-right: 20px;
+            }
+            &-text {
+                font-size: 14px;
+                max-width: 100px;
+                text-align: center;
             }
         }
         &__info {

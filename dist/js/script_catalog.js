@@ -136,49 +136,93 @@ noUiSlider.create(mobileYearSlider, {
 
 function filter(costRange, yearRange, selectedCategories, selectedBrands) {
     allCars.forEach(item => {
-        let carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
+        let carCost;
+        if(item.querySelector('.cost-rf') !== null) {
+            carCost = parseInt(item.querySelector('.cost-rf').innerHTML.replace(/\s+/g, ''));
+        }
         let carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
         let carBrand = item.getAttribute('data-brand');
         let carCategory = item.getAttribute('data-category');
-        if (selectedBrands.length != 0 && selectedCategories.length != 0) {
-            if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
-                && selectedCategories.includes(carCategory) && selectedBrands.includes(carBrand))) {
-                fadeOut(item, 300);
+        if (carCost !== undefined) {
+            if (selectedBrands.length != 0 && selectedCategories.length != 0) {
+                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
+                    && selectedCategories.includes(carCategory) && selectedBrands.includes(carBrand))) {
+                    fadeOut(item, 300);
+                }
+                else {
+                    if(getComputedStyle(item).display == 'none')
+                        fadeIn(item, 300);
+                }
+            }
+            else if (selectedBrands.length != 0) {
+                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
+                    && selectedBrands.includes(carBrand))) {
+                    fadeOut(item, 300);
+                }
+                else {
+                    if(getComputedStyle(item).display == 'none')
+                        fadeIn(item, 300);
+                }
+            }
+            else if (selectedCategories.length != 0) {
+                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
+                    && selectedCategories.includes(carCategory))) {
+                    fadeOut(item, 300);
+                }
+                else {
+                    if(getComputedStyle(item).display == 'none')
+                        fadeIn(item, 300);
+                }
             }
             else {
-                if(getComputedStyle(item).display == 'none')
-                    fadeIn(item, 300);
-            }
-        }
-        else if (selectedBrands.length != 0) {
-            if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
-                && selectedBrands.includes(carBrand))) {
-                fadeOut(item, 300);
-            }
-            else {
-                if(getComputedStyle(item).display == 'none')
-                    fadeIn(item, 300);
-            }
-        }
-        else if (selectedCategories.length != 0) {
-            if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
-                && selectedCategories.includes(carCategory))) {
-                fadeOut(item, 300);
-            }
-            else {
-                if(getComputedStyle(item).display == 'none')
-                    fadeIn(item, 300);
+                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
+                    fadeOut(item, 300);
+                }
+                else {
+                    if(getComputedStyle(item).display == 'none')
+                        fadeIn(item, 300);
+                }
             }
         }
         else {
-            if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1])) {
-                fadeOut(item, 300);
+            if (selectedBrands.length != 0 && selectedCategories.length != 0) {
+                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && selectedCategories.includes(carCategory) && selectedBrands.includes(carBrand))) {
+                    fadeOut(item, 300);
+                }
+                else {
+                    if(getComputedStyle(item).display == 'none')
+                        fadeIn(item, 300);
+                }
+            }
+            else if (selectedBrands.length != 0) {
+                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && selectedBrands.includes(carBrand))) {
+                    fadeOut(item, 300);
+                }
+                else {
+                    if(getComputedStyle(item).display == 'none')
+                        fadeIn(item, 300);
+                }
+            }
+            else if (selectedCategories.length != 0) {
+                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && selectedCategories.includes(carCategory))) {
+                    fadeOut(item, 300);
+                }
+                else {
+                    if(getComputedStyle(item).display == 'none')
+                        fadeIn(item, 300);
+                }
             }
             else {
-                if(getComputedStyle(item).display == 'none')
-                    fadeIn(item, 300);
+                if (!(carYear >= yearRange[0] && carYear <= yearRange[1])) {
+                    fadeOut(item, 300);
+                }
+                else {
+                    if(getComputedStyle(item).display == 'none')
+                        fadeIn(item, 300);
+                }
             }
         }
+        
     });
 };
 

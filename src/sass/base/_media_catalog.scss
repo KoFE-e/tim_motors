@@ -77,6 +77,9 @@
             &__info {
                 width: 1200px;
             }
+            &-call {
+                font-size: 16px;
+            }
         }
     }
 
@@ -418,6 +421,9 @@
                     transform: scale(1);
                 }
             }
+            &-call {
+                font-size: 14px;
+            }
             &-text {
                 padding-left: 25px;
                 padding-right: 25px;
@@ -525,12 +531,16 @@
                 box-shadow: 4px 4px 6px #c9d9e8;
             }
         }
+        
         &__card {
             &-prices {
                 margin-top: 10px;
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(2, 35px);
                 row-gap: 10px;
+            }
+            &-call {
+                margin-top: 0;
             }
             &-more {
                 &:hover {
@@ -569,6 +579,14 @@
             &-btn {
                 &:hover {
                     transform: scale(1);
+                }
+            }
+            &-characteristics {
+                &-text {
+                    max-width: 60px;
+                }
+                &-img {
+                    margin-right: 5px;
                 }
             }
             &__info {
