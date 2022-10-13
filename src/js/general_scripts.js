@@ -63,6 +63,12 @@ hamburger.addEventListener('click', () => {
     }
 });
 
+overlay.addEventListener('click', () => {
+    fadeOut(mobilemenu, 600);
+    fadeOut(overlay, 600);
+    hamburger.classList.remove('expanded');
+});
+
 menulinks.forEach(item => {
     item.addEventListener('click', () => {
         fadeOut(mobilemenu, 600);

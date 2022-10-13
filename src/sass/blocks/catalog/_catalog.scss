@@ -182,6 +182,12 @@
             &:hover {
                 transform: scale(1.05);
             }
+            &_elite {
+                max-width: 100%;
+                border-radius: 34px;
+                height: 100%;
+                object-fit: fill;
+            }
         }
         &-logo {
             position: absolute;
@@ -323,6 +329,7 @@
             &-text {
                 font-weight: 600;
                 font-size: 24px;
+                margin-bottom: 10px;
                 line-height: 165.9%;
                 color: #000000;
             }
