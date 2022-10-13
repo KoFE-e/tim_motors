@@ -22,7 +22,7 @@
                 padding-right: 30px;
             }
             &-descr {
-                font-size: 22px;
+                font-size: 18px;
             }
             &-price {
                 &-cost {
@@ -55,7 +55,6 @@
             padding: 0 80px;
             &__item {
                 &-descr {
-                    font-size: 20px;
                     margin-top: 33px;
                 }
             }
@@ -125,7 +124,7 @@
         }
         &__card {
             &-descr {
-                font-size: 20px;
+                font-size: 16px;
             }
             &-price {
                 &-cost {
@@ -378,6 +377,14 @@
             &-item {
                 height: 45px;
                 font-size: 16px;
+                &:hover {
+                    color: #90a3bf;
+                }
+            }
+            &-item.selected {
+                &:hover {
+                    color: #fff;
+                }
             }
         }
         &__items {
@@ -385,6 +392,20 @@
         }
         &__categories {
             margin-top: 35px;
+            &-btn {
+                &:hover {
+                    background-color: #f1f5f9;
+                    svg path {
+                        fill: $main-color;
+                    }
+                }
+            }
+            &-btn.selected {
+                background-color: $main-color;
+                svg path{
+                    fill: #fff;
+                }
+            }
         }
         &__list {
             grid-template-columns: 350px;
@@ -392,6 +413,11 @@
             grid-auto-rows: minmax(400px,auto);
         }
         &__card {
+            &-more, &-photo, &__btn {
+                &:hover {
+                    transform: scale(1);
+                }
+            }
             &-text {
                 padding-left: 25px;
                 padding-right: 25px;
