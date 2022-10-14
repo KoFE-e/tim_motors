@@ -77,6 +77,16 @@
         &-promo {
             min-height: 300px;
             padding-top: 40px;
+            .language {
+                width: 90px;
+                height: 35px;
+                left: 45px;
+                top: 15px;
+                border-radius: 20px;
+                &__choice {
+                    height: 25px;
+                }
+            }
         }
         &-state {
             &__wrapper {
@@ -159,6 +169,10 @@
             &__header {
                 text-transform: uppercase;
                 font-size: 21px;
+            }
+            .language {
+                left: 15px;
+                top: 25px;
             }
         }
         &-state {

@@ -1,5 +1,6 @@
 .news {
     &-promo {
+        position: relative;
         padding-top: 72px;
         min-height: 450px;
         background: url("../img/news/promo_bg.jpg") center center/cover no-repeat;
@@ -8,6 +9,9 @@
             font-size: 66px;
             line-height: 165.9%;
             color: #FFFFFF;
+        }
+        .language {
+            top: 20px;
         }
     }
     &-state {

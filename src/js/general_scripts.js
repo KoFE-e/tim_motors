@@ -1,3 +1,6 @@
+//get_language_page
+const page_language = document.getElementsByTagName('html')[0].getAttribute('lang');
+
 //animations
 
 const fadeIn = (el, timeout, display) => {

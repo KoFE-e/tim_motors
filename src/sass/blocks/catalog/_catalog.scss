@@ -78,7 +78,8 @@
         }
     }
     &__categories {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
         justify-content: space-between;
         padding: 0 130px;
         margin-top: 75px;
@@ -336,7 +337,6 @@
             &-column {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
             }
             &-close {
                 width: 50px;

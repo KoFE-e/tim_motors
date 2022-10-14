@@ -119,9 +119,15 @@ dropdownYears.forEach(item => {
     });
 });
 
-
 const searchBtn = document.querySelector('.promo__search__btn');
 
-searchBtn.addEventListener('click', () => {
-    window.location.href = '/catalog.html' + '?' + searchParams;
-});
+if (page_language == 'ru') {
+    searchBtn.addEventListener('click', () => {
+        window.location.href = '/catalog.html' + '?' + searchParams;
+    });
+}
+else {
+    searchBtn.addEventListener('click', () => {
+        window.location.href = '/catalog_en.html' + '?' + searchParams;
+    });
+}

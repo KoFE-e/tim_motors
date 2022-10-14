@@ -46,6 +46,10 @@ var costRange = [
     parseInt(costValues[1].innerHTML.slice(4).replace(/\s+/g, ''))
 ];
 
+if (page_language == "en") {
+    costRange[0] = parseInt(costValues[0].innerHTML.slice(6).replace(/\s+/g, ''));
+}
+
 var mobileCostValues = [
     document.getElementById('mobile-cost-range-min'),
     document.getElementById('mobile-cost-range-max')
@@ -55,6 +59,10 @@ var mobileCostRange = [
     parseInt(costValues[0].innerHTML.slice(4).replace(/\s+/g, '')),
     parseInt(costValues[1].innerHTML.slice(4).replace(/\s+/g, ''))
 ];
+
+if (page_language == "en") {
+    mobileCostRange[0] = parseInt(mobileCostValues[0].innerHTML.slice(6).replace(/\s+/g, ''));
+}
 
 var yearValues = [
     document.getElementById('year-range-min'),
@@ -229,20 +237,40 @@ function filter(costRange, yearRange, selectedCategories, selectedBrands) {
 //refresh_cost_range
 
 costSlider.noUiSlider.on('update', function (values, handle) {
-    if (handle == 0) {
-        costValues[handle].innerHTML = 'От $' + parseInt(values[handle]).toLocaleString();
+    if (page_language == "ru") {
+        if (handle == 0) {
+            costValues[handle].innerHTML = 'От $' + parseInt(values[handle]).toLocaleString();
+        }
+        else {
+            costValues[handle].innerHTML = 'До $' + parseInt(values[handle]).toLocaleString();
+        }
     }
     else {
-        costValues[handle].innerHTML = 'До $' + parseInt(values[handle]).toLocaleString();
+        if (handle == 0) {
+            costValues[handle].innerHTML = 'From $' + parseInt(values[handle]).toLocaleString();
+        }
+        else {
+            costValues[handle].innerHTML = 'To $' + parseInt(values[handle]).toLocaleString();
+        }
     }
 });
 
 mobileCostSlider.noUiSlider.on('update', function (values, handle) {
-    if (handle == 0) {
-        mobileCostValues[handle].innerHTML = 'От $' + parseInt(values[handle]).toLocaleString();
+    if (page_language == "ru") {
+        if (handle == 0) {
+            mobileCostValues[handle].innerHTML = 'От $' + parseInt(values[handle]).toLocaleString();
+        }
+        else {
+            mobileCostValues[handle].innerHTML = 'До $' + parseInt(values[handle]).toLocaleString();
+        }
     }
     else {
-        mobileCostValues[handle].innerHTML = 'До $' + parseInt(values[handle]).toLocaleString();
+        if (handle == 0) {
+            mobileCostValues[handle].innerHTML = 'From $' + parseInt(values[handle]).toLocaleString();
+        }
+        else {
+            mobileCostValues[handle].innerHTML = 'To $' + parseInt(values[handle]).toLocaleString();
+        }
     }
 });
 
@@ -299,14 +327,12 @@ allCategories.forEach(item => {
             if (!selectedCategories.includes(category)) {
                 selectedCategories.push(category);
             }
-            console.log(selectedCategories);
         }
         else {
             let index = selectedCategories.indexOf(category);
             if (index != -1) {
                 selectedCategories.splice(index, 1);
             }
-            console.log(selectedCategories);
             item.classList.remove('selected');
         }
         filter(costRange, yearRange, selectedCategories, selectedBrands);
@@ -322,14 +348,12 @@ allBrands.forEach(item => {
             if (!selectedBrands.includes(brand)) {
                 selectedBrands.push(brand);
             }
-            console.log(selectedBrands);
         }
         else {
             let index = selectedBrands.indexOf(brand);
             if (index != -1) {
                 selectedBrands.splice(index, 1);
             }
-            console.log(selectedBrands);
             item.classList.remove('selected');
         }
         filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
