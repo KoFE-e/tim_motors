@@ -34,22 +34,44 @@ overlay.addEventListener('click', () => {
 });
 
 $(document).ready(function() {
-    card_info.forEach(item => {
-        $(item).magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            tLoading: 'Загрузка изображения #%curr%...',
-            removalDelay: 300,
-            mainClass: 'mfp-fade',
-            gallery: {
-                enabled: true,
-                navigateByImgClick: true,
-                tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
-                preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-            },
-            image: {
-                tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.',
-            }
+    if(page_language == 'ru') {
+        card_info.forEach(item => {
+            $(item).magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                tLoading: 'Загрузка изображения #%curr%...',
+                removalDelay: 300,
+                mainClass: 'mfp-fade',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
+                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                },
+                image: {
+                    tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.',
+                }
+            });
         });
-    });
+    }
+    else {
+        card_info.forEach(item => {
+            $(item).magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                tLoading: 'Loading image #%curr%...',
+                removalDelay: 300,
+                mainClass: 'mfp-fade',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    tCounter: '<span class="mfp-counter">%curr% of %total%</span>',
+                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                },
+                image: {
+                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                }
+            });
+        });
+    }
 });

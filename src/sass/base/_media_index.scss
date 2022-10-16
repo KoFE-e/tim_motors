@@ -1,4 +1,13 @@
+@media (max-width: 1800px) {
+    .promo {
+        min-height: 750px;
+    }
+}
+
 @media (max-width: 1599.98px) {
+    .promo {
+        min-height: 650px;
+    }
     .menu {
         &__list {
             width: 350px;
@@ -230,6 +239,8 @@
         }
     }
     .promo {
+        min-height: 550px;
+        padding-top: 90px;
         &__logo {
             transform: scale(0.8);
         }
@@ -376,6 +387,11 @@
         }
     }
     .promo {
+        min-height: 500px;
+        padding-top: 75px;
+        &__header {
+            font-size: 20px;
+        }
         &__search {
             bottom: -45px;
             height: 90px;
@@ -634,7 +650,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            bottom: -100px;
+            bottom: -180px;
             width: 300px;
             height: 220px;
             padding: 20px;
@@ -668,7 +684,7 @@
         }
     }
     .advantages {
-        padding-top: 150px;
+        padding-top: 230px;
         &__item {
             &:hover {
                 transform: scale(1);
@@ -837,36 +853,41 @@
         }
     }
     .promo {
+        padding-top: 60px;
         align-items: normal;
         background: none;
         min-height: 337px;
         &__img {
-            transform: scale(0.5);
             margin-bottom: 0;
         }
         &__logo {
-            margin-bottom: 0;
+            width: 200px;
+            object-fit: cover;
+            margin-bottom: 14px;
         }
         &__wrapper {
-            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         &__divider {
             background-color: #4894FF;
-            width: 51px;
+            width: 26px;
             height: 2px;
-            margin-bottom: 17px;
+            margin-bottom: 14px;
         }
         &__header {
             font-weight: 800;
             font-size: 12px;
             line-height: 165.9%;
+            max-width: 200px;
             color: #000000;
         }
         &__search {
             padding: 7px;
             padding-top: 10px;
             height: 145px;
-            bottom: -35px;
+            bottom: -130px;
             &__select {
                 font-weight: 400;
                 font-size: 12px;
@@ -894,7 +915,6 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             background: url("../img/home/promo/promo_bg.jpg") center (center/cover) no-repeat;
-            filter: blur(2.5px);
         }
     }
     .hamburger {
@@ -910,7 +930,7 @@
         }
     }
     .advantages {
-        padding: 85px 0 57px 0;
+        padding: 190px 0 57px 0;
         &__wrapper {
             grid-template-rows: none;
         }

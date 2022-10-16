@@ -230,7 +230,6 @@ function filter(costRange, yearRange, selectedCategories, selectedBrands) {
                 }
             }
         }
-        
     });
 };
 
@@ -356,6 +355,7 @@ allBrands.forEach(item => {
             }
             item.classList.remove('selected');
         }
+        filter(costRange, yearRange, selectedCategories, selectedBrands);
         filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
     });
 });

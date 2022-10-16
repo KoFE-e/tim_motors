@@ -511,7 +511,7 @@
 @media (max-width: 575.98px) {
     .catalog {
         &__items {
-            padding: 80px 0;
+            padding: 165px 0 80px 0;
             &-header {
                 display: none;
             }
@@ -617,8 +617,8 @@
         }
     }
     .promo_catalog {
-        display: flex;
-        min-height: 305px;
+        display: block;
+        min-height: 337px;
         &::before {
             display: none;
         }
@@ -627,7 +627,7 @@
             &__search {
                 height: 160px;
                 padding: 20px;
-                bottom: -50px;
+                bottom: -130px;
             }
             &__wrapper {
                 margin-top: 70px;
@@ -647,13 +647,7 @@
                 color: #FFFFFF;
             }
             &__circle {
-                top: 43px;
-                width: 179.42px;
-                height: 147.55px;
-                background: #000000;
-                opacity: 0.4;
-                filter: blur(50px);
-                border-radius: 219px;
+                top: -260px;
             }
         }
         .dropdown {
