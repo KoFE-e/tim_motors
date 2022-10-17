@@ -20,7 +20,7 @@
         margin: 0 auto;
         width: 60px;
         height: 5px;
-        background-color: #3563E9;
+        background-color: $main-color;
         border-radius: 2px;
         margin-bottom: 30px;
     }
@@ -83,7 +83,7 @@
             align-items: center;
             width: 273px;
             height: 106px;
-            background: #3563E9;
+            background: $main-color;
             border-radius: 21px;
             font-weight: 700;
             font-size: 21px;
@@ -178,17 +178,17 @@
         color: #000000;
         &:hover {
             text-decoration: none;
-            color: #1476FF;
+            color: $main-color;
         }
     }
     &__selected {
         &_ru {
             background: linear-gradient(270deg, #C9D9E8 -2.46%, rgba(201, 217, 232, 0) 74.59%);
-            color: #1476FF;
+            color: $main-color;
         }
         &_en {
             background: linear-gradient(-270deg, #C9D9E8 -2.46%, rgba(201, 217, 232, 0) 74.59%);
-            color: #1476FF;
+            color: $main-color;
         }
     }
 }

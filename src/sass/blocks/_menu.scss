@@ -126,7 +126,7 @@ header {
         display: block;
         text-align: center;
         font-weight: 700;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 165.9%;
         color: #000000;
         text-decoration: none;
@@ -184,7 +184,7 @@ header {
         width: 18px;
         height: 1.5px;
         border-radius: 0.75px;
-        background-color: #1476FF;
+        background-color: $main-color;
     }
     &.expanded {
         span {

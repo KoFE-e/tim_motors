@@ -871,7 +871,6 @@
             align-items: center;
         }
         &__divider {
-            background-color: #4894FF;
             width: 26px;
             height: 2px;
             margin-bottom: 14px;
@@ -897,7 +896,7 @@
                 width: 100%;
                 box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.25);
                 border-radius: 10px;
-                background-color: #1476FF;
+                background-color: $main-color;
                 font-weight: 600;
                 font-size: 12px;    
             }
@@ -1050,7 +1049,7 @@
             box-shadow: none;
             &__subheader {
                 font-size: 12.5367px;
-                color: #3563E9;
+                color: $main-color;
             }
             &__text {
                 font-weight: 600;
@@ -1086,7 +1085,7 @@
             &__subheader {
                 font-size: 16px;
                 text-transform: uppercase;
-                color: #1476FF;
+                color: $main-color;
                 font-weight: 800;
             }
             &__descr {
@@ -1165,7 +1164,7 @@
                 align-items: center;
                 width: 300px;
                 height: 102px;
-                background: #1476FF;
+                background: $main-color;
                 border-radius: 12px;
                 box-shadow: none;
                 svg {
