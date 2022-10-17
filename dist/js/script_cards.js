@@ -6,21 +6,24 @@ const card_img = document.querySelectorAll('.catalog__card-img');
 more_btns.forEach((item, index) => {
     item.addEventListener('click', () => {
         fadeIn(card_info[index], 300);
-        fadeIn(overlay, 300);
+        if (getComputedStyle(overlay).display == 'none')
+            fadeIn(overlay, 300);
     });
 });
 
 card_img.forEach((item, index) => {
     item.addEventListener('click', () => {
         fadeIn(card_info[index], 300);
-        fadeIn(overlay, 300);
+        if (getComputedStyle(overlay).display == 'none')
+            fadeIn(overlay, 300);
     });
 });
 
 close_btns.forEach((item, index) => {
     item.addEventListener('click', () => {
         fadeOut(card_info[index], 300);
-        fadeOut(overlay, 300);
+        if (getComputedStyle(overlay).display != 'none')
+            fadeOut(overlay, 300);
     });
 });
 

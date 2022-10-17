@@ -6,7 +6,7 @@ const page_language = document.getElementsByTagName('html')[0].getAttribute('lan
 const fadeIn = (el, timeout, display) => {
     el.style.opacity = 0;
     el.style.display = display || 'block';
-    el.style.transition = `all ${timeout}ms`;
+    el.style.transition = `opacity ${timeout}ms`;
     setTimeout(() => {
       el.style.opacity = 1;
     }, 10);
@@ -14,7 +14,7 @@ const fadeIn = (el, timeout, display) => {
 
 const fadeOut = (el, timeout) => {
     el.style.opacity = 1;
-    el.style.transition = `all ${timeout}ms`;
+    el.style.transition = `opacity ${timeout}ms`;
     el.style.opacity = 0;
   
     setTimeout(() => {
@@ -67,7 +67,7 @@ hamburger.addEventListener('click', () => {
 });
 
 overlay.addEventListener('click', () => {
-    if(!mobilemenu.classList.contains('menu-mobile_active')) {
+    if(mobilemenu.classList.contains('menu-mobile_active')) {
         mobilemenu.classList.remove('menu-mobile_active');
         fadeOut(overlay, 600);
         hamburger.classList.remove('expanded');
