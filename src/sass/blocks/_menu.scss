@@ -166,7 +166,7 @@ header {
 .hamburger {
     display: none;
     position: fixed;
-    z-index: 30;
+    z-index: 14;
     right: 20px;
     top: 20px;
     width: 40px;
@@ -193,6 +193,7 @@ header {
         background-color: $main-color;
     }
     &.expanded {
+        z-index: 20;
         span {
             &:first-child {
                 transform: translateY(4px) rotate(45deg);

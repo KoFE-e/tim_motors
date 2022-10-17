@@ -56,29 +56,33 @@ const hamburger = document.querySelector('.hamburger'),
 hamburger.addEventListener('click', () => {
     if(!mobilemenu.classList.contains('menu-mobile_active')) {
         mobilemenu.classList.add('menu-mobile_active');
-        fadeIn(overlay, 600);
         hamburger.classList.add('expanded');
+        if (getComputedStyle(overlay).display == 'none')
+            fadeIn(overlay, 600);
     }
     else {
         mobilemenu.classList.remove('menu-mobile_active');
-        fadeOut(overlay, 600);
         hamburger.classList.remove('expanded');
+        if (getComputedStyle(overlay).display != 'none')
+            fadeOut(overlay, 600);
     }
 });
 
 overlay.addEventListener('click', () => {
     if(mobilemenu.classList.contains('menu-mobile_active')) {
         mobilemenu.classList.remove('menu-mobile_active');
-        fadeOut(overlay, 600);
         hamburger.classList.remove('expanded');
+        if (getComputedStyle(overlay).display != 'none')
+            fadeOut(overlay, 600);
     }
 });
 
 menulinks.forEach(item => {
     item.addEventListener('click', () => {
         mobilemenu.classList.remove('menu-mobile_active');
-        fadeOut(overlay, 600);
         hamburger.classList.remove('expanded');
+        if (getComputedStyle(overlay).display != 'none')
+            fadeOut(overlay, 600);
     });
 });
 

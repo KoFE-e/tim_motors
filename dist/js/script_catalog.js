@@ -392,5 +392,38 @@ dropdowns.forEach(dropdown => {
 });
 
 
+const params = document.querySelectorAll('.catalog__search__select'),
+      lists = document.querySelectorAll('.catalog__search__list');
+
+params.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        lists.forEach(list => {
+            list.classList.remove('catalog__search_selected');
+        });
+        lists[index].classList.add('catalog__search_selected');
+    })
+});
+
+const reset_btn = document.querySelector('.catalog__search__reset');
+
+reset_btn.addEventListener('click', () => {
+    selectedBrands = [];
+    allBrands.forEach(item => {
+        item.classList.remove('selected');
+    });
+    selectedCategories = [];
+    allCategories.forEach(item => {
+        item.classList.remove('selected');
+    });
+    mobileYearRange = [2005, 2023];
+    mobileYearSlider.noUiSlider.set(mobileYearRange);
+    mobileCostRange = [0, 1000000];
+    mobileCostSlider.noUiSlider.set(mobileCostRange);
+    filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+});
+
+
+
+
 
 
