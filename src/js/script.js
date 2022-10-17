@@ -68,9 +68,8 @@ $(document).ready(function(){
         speed: 1200,
         adaptiveHeight: true,
         arrows: true,
-        autoplay: true,
+        autoplay: false,
         swipe: false,
-        autoplaySpeed: 5000,
         slidesToShow: 1,
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/home/slider/left.png"></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icons/home/slider/right.png"></button>',
@@ -78,8 +77,6 @@ $(document).ready(function(){
             breakpoint: 992,
             settings: {
                 swipe: true,
-                arrows: false,
-                dots: true
             }
         }]
     });

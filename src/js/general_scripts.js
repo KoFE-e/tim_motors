@@ -6,7 +6,7 @@ const page_language = document.getElementsByTagName('html')[0].getAttribute('lan
 const fadeIn = (el, timeout, display) => {
     el.style.opacity = 0;
     el.style.display = display || 'block';
-    el.style.transition = `opacity ${timeout}ms`;
+    el.style.transition = `all ${timeout}ms`;
     setTimeout(() => {
       el.style.opacity = 1;
     }, 10);
@@ -14,7 +14,7 @@ const fadeIn = (el, timeout, display) => {
 
 const fadeOut = (el, timeout) => {
     el.style.opacity = 1;
-    el.style.transition = `opacity ${timeout}ms`;
+    el.style.transition = `all ${timeout}ms`;
     el.style.opacity = 0;
   
     setTimeout(() => {
@@ -54,21 +54,21 @@ const hamburger = document.querySelector('.hamburger'),
         menulinks = document.querySelectorAll('.menu-mobile-link');
 
 hamburger.addEventListener('click', () => {
-    if(getComputedStyle(mobilemenu).display == 'none') {
-        fadeIn(mobilemenu, 600);
+    if(!mobilemenu.classList.contains('menu-mobile_active')) {
+        mobilemenu.classList.add('menu-mobile_active');
         fadeIn(overlay, 600);
         hamburger.classList.add('expanded');
     }
     else {
-        fadeOut(mobilemenu, 600);
+        mobilemenu.classList.remove('menu-mobile_active');
         fadeOut(overlay, 600);
         hamburger.classList.remove('expanded');
     }
 });
 
 overlay.addEventListener('click', () => {
-    if(getComputedStyle(mobilemenu).display != 'none') {
-        fadeOut(mobilemenu, 600);
+    if(!mobilemenu.classList.contains('menu-mobile_active')) {
+        mobilemenu.classList.remove('menu-mobile_active');
         fadeOut(overlay, 600);
         hamburger.classList.remove('expanded');
     }
@@ -76,7 +76,7 @@ overlay.addEventListener('click', () => {
 
 menulinks.forEach(item => {
     item.addEventListener('click', () => {
-        fadeOut(mobilemenu, 600);
+        mobilemenu.classList.remove('menu-mobile_active');
         fadeOut(overlay, 600);
         hamburger.classList.remove('expanded');
     });

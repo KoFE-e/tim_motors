@@ -109,11 +109,11 @@ header {
 }
 
 .menu-mobile {
-    display: none;
+    display: block;
     min-height: 93px;
     position: fixed;
     z-index: 20;
-    top: 80px;
+    top: -100%;
     left: 50%;
     transform: translateX(-50%);
     transition: 0.6s all;
@@ -140,6 +140,9 @@ header {
         height: 1px;
         background-color: #F3F8FF;
         margin: 10px auto;
+    }
+    &_active {
+        top: 80px;
     }
 }
 
