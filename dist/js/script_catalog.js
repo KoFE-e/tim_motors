@@ -151,7 +151,7 @@ function filter(costRange, yearRange, selectedCategories, selectedBrands) {
         let carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
         let carBrand = item.getAttribute('data-brand');
         let carCategory = item.getAttribute('data-category');
-        if (carCost !== undefined) {
+        if (carCategory != 'elite') {
             if (selectedBrands.length != 0 && selectedCategories.length != 0) {
                 if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
                     && selectedCategories.includes(carCategory) && selectedBrands.includes(carBrand))) {
@@ -315,6 +315,9 @@ mobileYearSlider.noUiSlider.on('set', function (values, handle) {
     filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
 });
 
+//getting_width_of_screen
+
+const windowInnerWidth = document.documentElement.clientWidth;
 
 //adding_selected_classes
 
@@ -334,8 +337,12 @@ allCategories.forEach(item => {
             }
             item.classList.remove('selected');
         }
-        filter(costRange, yearRange, selectedCategories, selectedBrands);
-        filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+        if (windowInnerWidth >= 576) {
+            filter(costRange, yearRange, selectedCategories, selectedBrands);
+        }
+        else {
+            filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+        } 
     });
 });
 
@@ -355,41 +362,16 @@ allBrands.forEach(item => {
             }
             item.classList.remove('selected');
         }
-        filter(costRange, yearRange, selectedCategories, selectedBrands);
-        filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+        if (windowInnerWidth >= 576) {
+            filter(costRange, yearRange, selectedCategories, selectedBrands);
+        }
+        else {
+            filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+        } 
     });
 });
 
 //dropdown_menu
-
-const dropdowns = document.querySelectorAll('.promo__search__item');
-
-dropdowns.forEach(dropdown => {
-    const select = dropdown.querySelector('.promo__search__select');
-    const menu = dropdown.querySelector('.dropdown__list');
-    const options = dropdown.querySelectorAll('.dropdown__item');
-
-    select.addEventListener('click', () => {
-        if (getComputedStyle(menu).display == "none") {
-            fadeIn(menu, 300);
-        }
-        else {
-            fadeOut(menu, 300);
-        };
-    });
-
-    document.addEventListener('click', event => {
-        if (event.target != select && event.target != menu && !Array.from(options).includes(event.target)) {
-            fadeOut(menu, 300);
-        };
-    });
-
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            filter(costRange, yearRange, selectedCategories, selectedBrands);
-        });
-    });
-});
 
 
 const params = document.querySelectorAll('.catalog__search__select'),
