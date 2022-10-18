@@ -373,6 +373,35 @@ allBrands.forEach(item => {
 
 //dropdown_menu
 
+const dropdowns = document.querySelectorAll('.promo__search__item');
+
+dropdowns.forEach(dropdown => {
+    const select = dropdown.querySelector('.promo__search__select');
+    const menu = dropdown.querySelector('.dropdown__list');
+    const options = dropdown.querySelectorAll('.dropdown__item');
+
+    select.addEventListener('click', () => {
+        if (getComputedStyle(menu).display == "none") {
+            fadeIn(menu, 300);
+        }
+        else {
+            fadeOut(menu, 300);
+        };
+    });
+
+    document.addEventListener('click', event => {
+        if (event.target != select && event.target != menu && !Array.from(options).includes(event.target)) {
+            fadeOut(menu, 300);
+        };
+    });
+
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            filter(costRange, yearRange, selectedCategories, selectedBrands);
+        });
+    });
+});
+
 
 const params = document.querySelectorAll('.catalog__search__select'),
       lists = document.querySelectorAll('.catalog__search__list');
