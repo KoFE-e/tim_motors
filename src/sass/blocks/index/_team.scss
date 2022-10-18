@@ -65,35 +65,74 @@
         align-items: center;
         margin: 0 auto;
         width: 760px;
-        min-height: 164px;
+        min-height: 273px;
         box-shadow: -1px -1px 0px #FFFFFF, -2px -2px 2px #B8CCE0, inset -1px -1px 0px #FFFFFF, inset -2px -2px 2px #B8CCE0;
         border-radius: 32px;
         &__wrapper {
             display: flex;
             align-items: center;
             width: 682px;
-            min-height: 102px;
+            min-height: 207px;
             box-shadow: 8px 8px 16px #C9D9E8, -8px -8px 16px #FFFFFF;
             border-radius: 24px;
-            padding: 23px 27px;
-        }
-        &__icon {
-            margin-right: 40px;
+            padding: 32px 65px 32px 80px;
+            &_leftbg {
+                background: url("../img/home/team/address_left_bg.png") left (center/contain) no-repeat;
+            }
+            background-color: #f1f5f9;
         }
         &__subheader {
             font-weight: 700;
             font-size: 24px;
             line-height: 155.9%;
+            color: #000000;
+            margin-bottom: 16px;
         }
-        &__link {
-            @include a_reset;
+        &__route {
             font-weight: 600;
             font-size: 16px;
             color: #727272;
+        }
+        &__icons {
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            position: relative;
+            &:before {
+                content: url("../icons/home/team/lines.png");
+                position: absolute;
+                bottom: -65px;
+                left: -115px;
+            }    
+        }
+        &__icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 84px;
+            background: #F1F5F9;
+            box-shadow: inset 8px 5px 28px -11px rgba(0, 0, 0, 0.25);
+            border-radius: 24px;
+            margin-left: 27px;
             transition: 0.3s all;
-            &:hover {
-                color: $main-color;
+            &__descr {
+                font-weight: 400;
+                font-size: 11px;
+                line-height: 155.9%;
+                color: #000000;
             }
+            &:hover {
+                text-decoration: none;
+                color: #000000;
+                transform: scale(1.05);
+            }
+        }
+        &__img {
+            max-width: 100%;
+            max-height: 70%;
+            object-fit: contain;
         }
     }
 }
