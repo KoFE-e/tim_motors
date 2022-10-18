@@ -1,6 +1,6 @@
 .promo {
-    min-height: 860px;
-    background: url("../img/home/promo/promo_bg.jpg") center (center/cover) no-repeat;
+    min-height: 576px;
+    background: url("../img/home/promo/promo_bg.jpg") center (bottom/cover) no-repeat;
     position: relative;
     padding-top: 123px;
     text-align: center;
@@ -10,6 +10,9 @@
         justify-content: center;
     }
     &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: relative;
         z-index: 3;
     }
@@ -31,21 +34,35 @@
         text-align: center;
         color: #000;
         text-transform: uppercase;
+        position: relative;
+        z-index: 3;
         line-height: 165.9%;
+        &:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            width: 826px;
+            height: 92px;
+            background: #FFFFFF;
+            filter: blur(41.5px);
+        }
     }
     &__search {
-        width: 1200px;
+        width: 784px;
         height: 130px;
         position: absolute;
         z-index: 5;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -50px;
+        bottom: -100px;
         background: #FFFFFF;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 16px;
         display: grid;
-        grid-template-columns: 180px 90px 50px 273px;
+        grid-template-columns: 90px 50px 273px;
         justify-content: space-between;
         padding: 12px 12px 12px 102px;
         align-items: center;
@@ -81,7 +98,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 273px;
+            width: 100%;
             height: 106px;
             background: $main-color;
             border-radius: 21px;

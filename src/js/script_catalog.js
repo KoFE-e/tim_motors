@@ -30,8 +30,7 @@ noUiSlider.create(mobileCostSlider, {
 const url = new URL(location.href);
 var searchParams = new URLSearchParams(url.search);
 
-var beginCategory = searchParams.get('data-category'),
-      beginBrand = searchParams.get('data-brand'),
+var   beginBrand = searchParams.get('data-brand'),
       beginYear = parseInt(searchParams.get('min-year'));
 
 //create_arrays_for_filters
@@ -84,9 +83,7 @@ var mobileYearRange = [
     parseInt(mobileYearValues[1].innerHTML)
 ];
 
-const allCategories = document.querySelectorAll('.catalog__categories-btn');
 const allBrands = document.querySelectorAll('.catalog__models-item');
-var selectedCategories = [];
 var selectedBrands = [];
 
 //search_values
@@ -94,15 +91,6 @@ var selectedBrands = [];
 if (!isNaN(beginYear)) {
     yearRange[0] = beginYear;
     mobileYearRange[0] = beginYear;
-}
-
-if (beginCategory !== null) {
-    selectedCategories.push(beginCategory);
-    allCategories.forEach(item => {
-        if (item.getAttribute('data-category') == beginCategory) {
-            item.classList.add('selected');
-        }
-    });
 }
 
 if (beginBrand !== null) {
@@ -114,7 +102,7 @@ if (beginBrand !== null) {
     });
 }
 
-filter(costRange, yearRange, selectedCategories, selectedBrands);
+filter(costRange, yearRange, selectedBrands);
 
 var yearSlider = document.getElementById('year-range');
 
@@ -142,7 +130,7 @@ noUiSlider.create(mobileYearSlider, {
 
 //filter
 
-function filter(costRange, yearRange, selectedCategories, selectedBrands) {
+function filter(costRange, yearRange, selectedBrands) {
     allCars.forEach(item => {
         let carCost;
         if(item.querySelector('.cost-rf') !== null) {
@@ -150,31 +138,10 @@ function filter(costRange, yearRange, selectedCategories, selectedBrands) {
         }
         let carYear = parseInt(item.querySelector('.catalog__card-year').innerHTML);
         let carBrand = item.getAttribute('data-brand');
-        let carCategory = item.getAttribute('data-category');
-        if (carCategory != 'elite') {
-            if (selectedBrands.length != 0 && selectedCategories.length != 0) {
-                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
-                    && selectedCategories.includes(carCategory) && selectedBrands.includes(carBrand))) {
-                    fadeOut(item, 300);
-                }
-                else {
-                    if(getComputedStyle(item).display == 'none')
-                        fadeIn(item, 300);
-                }
-            }
-            else if (selectedBrands.length != 0) {
+        if (carCost !== undefined) {
+            if (selectedBrands.length != 0) {
                 if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
                     && selectedBrands.includes(carBrand))) {
-                    fadeOut(item, 300);
-                }
-                else {
-                    if(getComputedStyle(item).display == 'none')
-                        fadeIn(item, 300);
-                }
-            }
-            else if (selectedCategories.length != 0) {
-                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && carCost >= costRange[0] && carCost <= costRange[1] 
-                    && selectedCategories.includes(carCategory))) {
                     fadeOut(item, 300);
                 }
                 else {
@@ -193,26 +160,8 @@ function filter(costRange, yearRange, selectedCategories, selectedBrands) {
             }
         }
         else {
-            if (selectedBrands.length != 0 && selectedCategories.length != 0) {
-                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && selectedCategories.includes(carCategory) && selectedBrands.includes(carBrand))) {
-                    fadeOut(item, 300);
-                }
-                else {
-                    if(getComputedStyle(item).display == 'none')
-                        fadeIn(item, 300);
-                }
-            }
-            else if (selectedBrands.length != 0) {
+            if (selectedBrands.length != 0) {
                 if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && selectedBrands.includes(carBrand))) {
-                    fadeOut(item, 300);
-                }
-                else {
-                    if(getComputedStyle(item).display == 'none')
-                        fadeIn(item, 300);
-                }
-            }
-            else if (selectedCategories.length != 0) {
-                if (!(carYear >= yearRange[0] && carYear <= yearRange[1] && selectedCategories.includes(carCategory))) {
                     fadeOut(item, 300);
                 }
                 else {
@@ -297,22 +246,22 @@ mobileYearSlider.noUiSlider.on('update', function (values, handle) {
 
 costSlider.noUiSlider.on('set', function (values, handle) {
     costRange[handle] = parseInt(values[handle]);
-    filter(costRange, yearRange, selectedCategories, selectedBrands);
+    filter(costRange, yearRange, selectedBrands);
 });
 
 mobileCostSlider.noUiSlider.on('set', function (values, handle) {
     mobileCostRange[handle] = parseInt(values[handle]);
-    filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+    filter(mobileCostRange, mobileYearRange, selectedBrands);
 });
 
 yearSlider.noUiSlider.on('set', function (values, handle) {
     yearRange[handle] = parseInt(values[handle]);
-    filter(costRange, yearRange, selectedCategories, selectedBrands);
+    filter(costRange, yearRange, selectedBrands);
 });
 
 mobileYearSlider.noUiSlider.on('set', function (values, handle) {
     mobileYearRange[handle] = parseInt(values[handle]);
-    filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+    filter(mobileCostRange, mobileYearRange, selectedBrands);
 });
 
 //getting_width_of_screen
@@ -320,31 +269,6 @@ mobileYearSlider.noUiSlider.on('set', function (values, handle) {
 const windowInnerWidth = document.documentElement.clientWidth;
 
 //adding_selected_classes
-
-allCategories.forEach(item => {
-    item.addEventListener('click', () => {
-        var category = item.getAttribute('data-category');
-        if(!item.classList.contains('selected')) {
-            item.classList.add('selected');
-            if (!selectedCategories.includes(category)) {
-                selectedCategories.push(category);
-            }
-        }
-        else {
-            let index = selectedCategories.indexOf(category);
-            if (index != -1) {
-                selectedCategories.splice(index, 1);
-            }
-            item.classList.remove('selected');
-        }
-        if (windowInnerWidth >= 576) {
-            filter(costRange, yearRange, selectedCategories, selectedBrands);
-        }
-        else {
-            filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
-        } 
-    });
-});
 
 allBrands.forEach(item => {
     item.addEventListener('click', () => {
@@ -363,10 +287,10 @@ allBrands.forEach(item => {
             item.classList.remove('selected');
         }
         if (windowInnerWidth >= 576) {
-            filter(costRange, yearRange, selectedCategories, selectedBrands);
+            filter(costRange, yearRange, selectedBrands);
         }
         else {
-            filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
+            filter(mobileCostRange, mobileYearRange, selectedBrands);
         } 
     });
 });
@@ -397,7 +321,12 @@ dropdowns.forEach(dropdown => {
 
     options.forEach(option => {
         option.addEventListener('click', () => {
-            filter(costRange, yearRange, selectedCategories, selectedBrands);
+            if (windowInnerWidth >= 576) {
+                filter(costRange, yearRange, selectedBrands);
+            }
+            else {
+                filter(mobileCostRange, mobileYearRange, selectedBrands);
+            } 
         });
     });
 });
@@ -415,23 +344,19 @@ params.forEach((item, index) => {
     })
 });
 
-const reset_btn = document.querySelector('.catalog__search__reset');
+// const reset_btn = document.querySelector('.catalog__search__reset');
 
-reset_btn.addEventListener('click', () => {
-    selectedBrands = [];
-    allBrands.forEach(item => {
-        item.classList.remove('selected');
-    });
-    selectedCategories = [];
-    allCategories.forEach(item => {
-        item.classList.remove('selected');
-    });
-    mobileYearRange = [2005, 2023];
-    mobileYearSlider.noUiSlider.set(mobileYearRange);
-    mobileCostRange = [0, 1000000];
-    mobileCostSlider.noUiSlider.set(mobileCostRange);
-    filter(mobileCostRange, mobileYearRange, selectedCategories, selectedBrands);
-});
+// reset_btn.addEventListener('click', () => {
+//     selectedBrands = [];
+//     allBrands.forEach(item => {
+//         item.classList.remove('selected');
+//     });
+//     mobileYearRange = [2005, 2023];
+//     mobileYearSlider.noUiSlider.set(mobileYearRange);
+//     mobileCostRange = [0, 1000000];
+//     mobileCostSlider.noUiSlider.set(mobileCostRange);
+//     filter(mobileCostRange, mobileYearRange, selectedBrands);
+// });
 
 
 

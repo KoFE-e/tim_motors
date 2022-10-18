@@ -85,18 +85,8 @@ $(document).ready(function(){
 var searchParams = new URLSearchParams('?');
 
 //search
-const dropdownCategories = document.querySelectorAll('.dropdown__category'),
-      dropdownBrands = document.querySelectorAll('.dropdown__brand'),
+const dropdownBrands = document.querySelectorAll('.dropdown__brand'),
       dropdownYears = document.querySelectorAll('.dropdown__year');
-
-dropdownCategories.forEach(item => {
-    item.addEventListener('click', () => {
-        searchParams.delete('data-category');
-        if(!searchParams.has('data-category')) {
-            searchParams.append('data-category', item.getAttribute('data-category'));
-        }
-    });
-});
 
 dropdownBrands.forEach(item => {
     item.addEventListener('click', () => {
