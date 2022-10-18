@@ -1,0 +1,58 @@
+.deals {
+    background-color: #f1f5f9;
+    padding-top: 165px;
+    &__inner {
+        max-width: 1750px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 0 40px;
+    }
+    &__card {
+        
+    }
+    .slick-dots {
+        margin-left: calc(50% - (2rem + 1rem) / 2);
+    }
+    .catalog__card {
+        margin: 15px;
+        width: 563px;
+        &-more {
+            font-size: 14px;
+            width: 258px;
+        }
+        &-img {
+            height: 273px;
+            margin-top: 16px;
+        }
+        &-photo {
+            max-height: 200px;
+            min-height: auto;
+        }
+        &-year {
+            height: 22px;
+            width: 60px;
+            font-size: 14px;
+        }
+        &-descr {
+            margin-top: 10px;
+            font-size: 19px;
+        }
+        &-divider {
+            margin-top: 20px;
+        }
+        &__btn {
+            margin-top: 20px;
+        }
+        &-price {
+            &-cost {
+                font-size: 28px;
+            }
+            &-descr {
+                font-size: 10px;
+            }
+        }
+        &-text {
+            padding: 20px 45px 31px 45px;
+        }
+    }
+}

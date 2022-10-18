@@ -1,3 +1,15 @@
+@media (max-width: 1800px) {
+    .deals {
+        .catalog__card {
+            &-price {
+                &-cost {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1599.98px) {
     .menu {
         &__list {
@@ -10,10 +22,40 @@
             width: 130px;
         }
     }
+    .deals {
+        .catalog__card {
+            &-text {
+                padding: 20px 35px 31px 35px;
+            }
+            &-descr {
+                font-size: 16px;
+            }
+            &-price {
+                &-cost {
+                    font-size: 22px;
+                }
+            }
+            &-characteristics {
+                padding-left: 0;
+            }
+        }
+    }
 }
 @media (max-width: 1439.98px) {
     .container {
         max-width: 1140px;
+    }
+    .deals {
+        padding-top: 120px;
+        &__inner {
+            max-width: 1000px;
+        }
+        .slick-dots {
+            margin-left: calc(50% - (3rem + 1.5rem) / 2);
+        }
+    }
+    .promo {
+        background-position: center bottom;
     }
     .menu {
         padding: 0 50px;
@@ -373,6 +415,16 @@
             display: none;
         }
     }
+    .deals {
+        padding-top: 100px;
+        &__inner {
+            padding: 0;
+            max-width: 500px;
+        }
+        .slick-dots {
+            margin-left: calc(50% - (6rem + 3rem) / 2);
+        }
+    }
     .promo {
         padding-top: 75px;
         &__header {
@@ -411,6 +463,7 @@
         }
     }
     .advantages {
+        padding-top: 80px;
         &__wrapper {
             grid-template-columns: none;
             grid-template-rows: auto 300px;
@@ -655,6 +708,9 @@
             transform: scale(0.8);
         }
     }
+    .deals {
+        padding-top: 230px;
+    }
     .pageup, .phone {
         right: 25px;
         bottom: 25px;
@@ -715,7 +771,7 @@
         }
     }
     .advantages {
-        padding-top: 230px;
+        padding-top: 70px;
         &__item {
             &:hover {
                 transform: scale(1);
@@ -856,6 +912,35 @@
     .container {
         max-width: 320px;
     }
+    .deals {
+        padding-top: 160px;
+        &__inner {
+            margin-top: 30px;
+        }
+        .catalog__card {
+            &-text {
+                padding: 20px;
+            }
+            &-img {
+                height: 180px;
+            }
+            &-photo {
+                max-height: 80%;
+            }
+            &-divider {
+                margin-top: 5px;
+            }
+            &-price {
+                &-cost {
+                    font-size: 18px;
+                }
+            }
+            &-more {
+                font-size: 10px;
+                width: 170px;
+            }
+        }
+    }
     .menu {
         display: none;
     }
@@ -952,7 +1037,7 @@
         }
     }
     .advantages {
-        padding: 190px 0 57px 0;
+        padding: 50px 0 57px 0;
         &__wrapper {
             grid-template-rows: none;
         }
@@ -1135,7 +1220,7 @@
         }
     }
     .team {
-        padding: 55px 36px 103px 36px;
+        padding: 55px 0px 103px 0px;
         &__details {
             &__header {
                 font-size: 12px;

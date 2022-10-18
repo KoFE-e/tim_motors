@@ -80,6 +80,36 @@ $(document).ready(function(){
             }
         }]
     });
+
+    $('.deals__inner').slick({
+        speed: 1200,
+        adaptiveHeight: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        swipe: false,
+        dots: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        swipe: true,
+        responsive: [
+            {
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplaySpeed: 2000
+                }
+            }
+        ]
+    });
 });
 
 var searchParams = new URLSearchParams('?');
