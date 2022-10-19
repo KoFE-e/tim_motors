@@ -959,6 +959,11 @@
         align-items: normal;
         background: none;
         min-height: 337px;
+        .dropdown {
+            &__brand {
+                min-height: 30px;
+            }
+        }
         &__img {
             margin-bottom: 0;
         }
@@ -1037,7 +1042,6 @@
             justify-content: center;
             align-items: center;
             display: flex;
-            min-height: 30px;
             min-width: 100px;
         }
     }
