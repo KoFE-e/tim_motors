@@ -59,6 +59,19 @@
         row-gap: 30px;
         justify-content: center;
     }
+    &__video {
+        margin: 70px 0;
+        overflow: hidden;
+        width: 100%;
+        /* No clicking/hover effects */
+        pointer-events: none;
+        iframe {
+            /* Extend it beyond the viewport... */
+            width: 300%;
+            /* ...and bring it back again */
+            margin-left: -100%;
+        }
+    }
     &__address {
         display: flex;
         justify-content: center;

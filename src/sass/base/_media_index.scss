@@ -22,6 +22,11 @@
             width: 130px;
         }
     }
+    .youtube {
+        iframe {
+            height: 550px;
+        }
+    }
     .deals {
         .catalog__card {
             &-text {
