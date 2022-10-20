@@ -33,6 +33,13 @@ var searchParams = new URLSearchParams(url.search);
 var   beginBrand = searchParams.get('data-brand'),
       beginYear = parseInt(searchParams.get('min-year'));
 
+if (page_language == "ru") {
+    window.history.pushState(null, null, '/catalog');
+}
+else {
+    window.history.pushState(null, null, '/catalog_en');
+}
+
 //create_arrays_for_filters
 
 var costValues = [
