@@ -540,7 +540,7 @@
             border: none;
             border-radius: 0;
             box-shadow: none;
-            background: url("../img/home/team/address_full_bg.png") center (center/cover) no-repeat;
+            background: url("../img/home/team/address_full_bg.webp") center (center/cover) no-repeat;
             &__wrapper {
                 &_leftbg {
                     background: none;
@@ -1025,7 +1025,7 @@
             z-index: 1;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: url("../img/home/promo/promo_bg.jpg") center (bottom/cover) no-repeat;
+            background: url("../img/home/promo/promo_bg.webp") center (bottom/cover) no-repeat;
         }
     }
     .hamburger {
@@ -1081,7 +1081,7 @@
         }
     }
     .steps {
-        background: url("../img/home/steps/bg_steps_mobile.png") center (center / 100% 100%) no-repeat;
+        background: url("../img/home/steps/bg_steps_mobile.webp") center (center / 100% 100%) no-repeat;
         background-color: #F1F5F9;
         padding-top: 42px;
         padding-bottom: 50px;

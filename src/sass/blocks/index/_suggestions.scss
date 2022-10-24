@@ -1,7 +1,7 @@
 .suggestions {
     min-height: 784px;
     padding-top: 95px;
-    background: url("../img/home/auto/auto_bg.png") center center/cover no-repeat;
+    background: url("../img/home/auto/auto_bg.webp") center center/cover no-repeat;
     background-color: #F1F5F9;
     &__wrapper {
         margin-top: 43px;
@@ -61,11 +61,11 @@
             left: 37%;
         }
         &_new {
-            background: url("../img/home/auto/blue_bg.png") center no-repeat;
+            background: url("../img/home/auto/blue_bg.webp") center no-repeat;
             background-color: #5CAFFC;  
         }
         &_bu {
-            background: url("../img/home/auto/grey_bg.png") center no-repeat;
+            background: url("../img/home/auto/grey_bg.webp") center no-repeat;
             background-color: #3563E9;
         }
     }

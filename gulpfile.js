@@ -6,6 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const webp = require('gulp-webp');
 
 gulp.task('server', function() {
 
@@ -79,7 +80,7 @@ gulp.task('icons', function () {
 
 gulp.task('images', function () {
     return gulp.src("src/img/**/*")
-        .pipe(imagemin())
+        .pipe(webp())
         .pipe(gulp.dest("dist/img"))
         .pipe(browserSync.stream());
 });

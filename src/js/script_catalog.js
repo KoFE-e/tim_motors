@@ -351,19 +351,6 @@ params.forEach((item, index) => {
     })
 });
 
-// const reset_btn = document.querySelector('.catalog__search__reset');
-
-// reset_btn.addEventListener('click', () => {
-//     selectedBrands = [];
-//     allBrands.forEach(item => {
-//         item.classList.remove('selected');
-//     });
-//     mobileYearRange = [2005, 2023];
-//     mobileYearSlider.noUiSlider.set(mobileYearRange);
-//     mobileCostRange = [0, 1000000];
-//     mobileCostSlider.noUiSlider.set(mobileCostRange);
-//     filter(mobileCostRange, mobileYearRange, selectedBrands);
-// });
 
 
 
