@@ -26,6 +26,8 @@
         background-color: $main-color;
         border-radius: 2px;
         margin-bottom: 30px;
+        position: relative;
+        z-index: 30;
     }
     &__header {
         margin-bottom: 0;
