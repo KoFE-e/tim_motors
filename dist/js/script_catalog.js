@@ -1,3 +1,16 @@
+const url = new URL(location.href);
+var searchParams = new URLSearchParams(url.search);
+
+var   beginBrand = searchParams.get('data-brand'),
+      beginYear = parseInt(searchParams.get('min-year'));
+
+if (page_language == "ru") {
+    window.history.pushState(null, null, '/catalog.html');
+}
+else {
+    window.history.pushState(null, null, '/catalog_en.html');
+}
+
 const allCars = document.querySelectorAll('.catalog__card');
 
 //create_sliders
@@ -25,20 +38,6 @@ noUiSlider.create(mobileCostSlider, {
         'max': [1000000]
     }
 });
-
-
-const url = new URL(location.href);
-var searchParams = new URLSearchParams(url.search);
-
-var   beginBrand = searchParams.get('data-brand'),
-      beginYear = parseInt(searchParams.get('min-year'));
-
-if (page_language == "ru") {
-    window.history.pushState(null, null, '/catalog');
-}
-else {
-    window.history.pushState(null, null, '/catalog_en');
-}
 
 //create_arrays_for_filters
 
